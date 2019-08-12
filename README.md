@@ -14,6 +14,20 @@ Let be filled with sweetness watching these beauties!
 - User can like a video, so It will show the most popular videos on the home page.
 - Add user Profile page, where it shows all the post, comments and liked videos.
 
+## Wireframes
+### Index
+
+![alt img](https://i.imgur.com/4pYxhq1.jpg)
+
+### Categories
+
+![alt img](https://i.imgur.com/KZcV7iO.jpg)
+![alt img](https://i.imgur.com/5yGDQCp.jpg)
+
+### Form and Footer
+
+![alt img](https://i.imgur.com/BLyXfWk.jpg)
+
 ## ERD
 *Relation:*
 - USER can have many COMMENTS
