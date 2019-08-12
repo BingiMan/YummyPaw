@@ -15,6 +15,7 @@ Let be filled with sweetness watching these beauties!
 - Add user Profile page, where it shows all the post, comments and liked videos.
 
 ## Wireframes
+
 ### Index
 
 ![alt img](https://i.imgur.com/4pYxhq1.jpg)
@@ -35,3 +36,34 @@ Let be filled with sweetness watching these beauties!
 - PET can have many COMMENTS
 
 ![alt text](https://i.imgur.com/41Iqwst.jpg)
+
+## Components Hierarchy
+
+- React components 
+
+```js
+<app>
+  <header>
+    <nav>
+      <userregister>
+      <userlogin>
+    </nav>
+    <heroimg>
+  </header>
+  <main>
+    <comments>
+    <categories>
+    <catsection>
+    <dogsection>
+    <postpet>
+  </main>
+  <footer>
+    <contact>
+    <hireus>
+  </footer>
+</app>
+```
+## Technologies
+
+- Rails and React
+- React-Router
