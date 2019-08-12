@@ -15,4 +15,4 @@ Let be filled with sweetness watching these beauties!
 - Add user Profile page, where it shows all the post, comments and liked videos.
 
 ## ERD
-![UNADJUSTEDNONRAW_thumb_b40](https://imgur.com/41Iqwst)
+![alt text](https://i.imgur.com/41Iqwst.jpg)
