@@ -42,7 +42,7 @@ Let be filled with sweetness watching these beauties!
 - USER can have many PET
 - PET can have many COMMENTS
 
-![alt text](https://i.imgur.com/ZfAlQ6t.jpg)
+![alt text](https://i.imgur.com/OxZdlAb.jpg)
 
 
 ## Components Hierarchy
