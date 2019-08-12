@@ -15,8 +15,8 @@ Let be filled with sweetness watching these beauties!
 - Add user Profile page, where it shows all the post, comments and liked videos.
 
 ## ERD
-  -USER can have many COMMENTS
-  -USER can have many POST
-  -POST can have many COMMENTS
-  
+*Relation:*
+- USER can have many COMMENTS
+- USER can have many PET
+- PET can have many COMMENTS
 ![alt text](https://i.imgur.com/41Iqwst.jpg)
