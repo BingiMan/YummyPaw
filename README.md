@@ -16,18 +16,25 @@ Let be filled with sweetness watching these beauties!
 
 ## Wireframes
 
-### Index
+### Home
 
-![alt img](https://i.imgur.com/4pYxhq1.jpg)
+![alt img](https://i.imgur.com/2U4N7rK.jpg)
 
 ### Categories
 
-![alt img](https://i.imgur.com/KZcV7iO.jpg)
-![alt img](https://i.imgur.com/5yGDQCp.jpg)
+![alt img](https://i.imgur.com/pt1TMeg.jpg)
+
+### Videos
+![alt img](https://i.imgur.com/b4Pl7BQ.jpg)
+![alt img](https://i.imgur.com/z5iku4N.jpg)
 
 ### Form and Footer
 
-![alt img](https://i.imgur.com/BLyXfWk.jpg)
+![alt img](https://i.imgur.com/cBm560Z.jpg)
+
+### See more
+
+![alt img](https://i.imgur.com/wpGzsoa.jpg)
 
 ## ERD
 *Relation:*
@@ -35,7 +42,8 @@ Let be filled with sweetness watching these beauties!
 - USER can have many PET
 - PET can have many COMMENTS
 
-![alt text](https://i.imgur.com/41Iqwst.jpg)
+![alt text](https://i.imgur.com/ZfAlQ6t.jpg)
+
 
 ## Components Hierarchy
 
