@@ -19,4 +19,5 @@ Let be filled with sweetness watching these beauties!
 - USER can have many COMMENTS
 - USER can have many PET
 - PET can have many COMMENTS
+
 ![alt text](https://i.imgur.com/41Iqwst.jpg)
