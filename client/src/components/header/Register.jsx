@@ -25,15 +25,15 @@ export default class Register extends React.Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const newUser = await createUser(this.state.registerForm);
-    this.setState({
-      registerForm: {
-        username: '',
-        email: '',
-        password: '',
-      }
-    })
-
+    await createUser(this.state.registerForm);
+    // this.setState({
+    //   registerForm: {
+    //     username: '',
+    //     email: '',
+    //     password: '',
+    //   }
+    // })
+    // console.log(this.state.registerForm)
   }
   // handleRedirect = async (e) => {
   //   e.preventDefault()
@@ -60,7 +60,7 @@ export default class Register extends React.Component {
           <input className="modern-input-text" onChange={this.handleChange} type="email" name="email" value={this.state.registerForm.email} placeholder="Email" />
           <input className="modern-input-text" onChange={this.handleChange} type="password" name="password" value={this.state.registerForm.password} placeholder="Password" />
           <div className="flex">
-            <button className="btn form-btn" onClick={this.handleRedirect}>Register</button>
+            <button className="btn form-btn" onClick={this.handleSubmit}>Register</button>
           </div>
         </form>
       </div>

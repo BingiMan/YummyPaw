@@ -1,4 +1,4 @@
-class PetsController < ApplicationControlller
+class PetsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
