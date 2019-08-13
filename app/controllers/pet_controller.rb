@@ -2,11 +2,11 @@ class PetsController < ApplicationControlller
 
   def index
     @user = User.find(params[:user_id])
-    @pets = Pet.where(user_id: @user_id)
+    @pets = Pet.where(user_id: @user.id)
     render json: @pets, include: :user, status: :ok
   end
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @pets = Pet.find(params[:id])
     render json: @pet, include: :user, status: :ok
   end
