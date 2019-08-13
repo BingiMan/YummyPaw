@@ -7,3 +7,11 @@ export const fetchUsers = async () => {
   const resp = await api.get('/users')
   return resp.data
 }
+export const createUser = async (data) => {
+  const resp = await api.post('/users', data);
+  return resp.data
+}
+export const deleteUser = async (id) => {
+  const resp = await api.delete(`/users/${id}`)
+  return resp.data
+}
