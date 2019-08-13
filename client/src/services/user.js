@@ -3,6 +3,10 @@ import axios from 'axios'
 export const api = axios.create({
   baseURL: 'http://localhost:3000'
 });
+// export const loginUser = async (data) => {
+//   const resp = await api.post(`/users/`, data)
+//   return resp.data
+// }
 export const fetchUsers = async () => {
   const resp = await api.get('/users')
   return resp.data
