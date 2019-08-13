@@ -10,4 +10,10 @@ User.create(
   username: 'Tibby Xu', 
   email: 'TibbyCoder@AmazingDev.com', 
   password_digest: 'chillpill'
-  )
+)
+User.create(
+  username: 'BingiMan', 
+  email: 'bingiman@hotmail.com', 
+  password_digest: 'bingiman'
+)
+
