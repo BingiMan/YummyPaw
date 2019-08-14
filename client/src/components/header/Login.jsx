@@ -1,4 +1,5 @@
 import React from 'react'
+import './headerStyle.css'
 import { withRouter } from 'react-router'
 import decode from 'jwt-decode';
 import {loginUser, verifyUser} from '../../services/user'
@@ -64,20 +65,21 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <form>
-            <div>
-              <h1>Login</h1>
+      <div className="login-dialog">
+        <div className="close-thik"></div>
+          <form className="login-form">
+            <div className="flex">
+              <h1 className="form-title">
+                Login
+              </h1>
             </div>
-            <input onChange={this.handleChange} type="text" name="username" value={this.state.loginForm.username} placeholder="Username" />
-            <input onChange={this.handleChange} type="password" name="password" value={this.state.loginForm.password} placeholder="Password" />
-            <div>
-            <button onClick={this.handleRedirect}>Login</button>
+            <input className="modern-input-text" onChange={this.handleChange} type="text" name="username" value={this.state.loginForm.username} placeholder="Username" />
+            <input className="modern-input-text" onChange={this.handleChange} type="password" name="password" value={this.state.loginForm.password} placeholder="Password" />
+            <div className="flex">
+            <button className="btn form-btn" onClick={this.handleRedirect}>Login</button>
             </div>
           </form>
         </div>
-      </div>
     )
   }
 }

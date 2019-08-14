@@ -1,9 +1,10 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import { createUser, loginUser } from '../../services/user';
 import decode from 'jwt-decode';
 
 
-export default class Register extends React.Component {
+class Register extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -36,13 +37,13 @@ export default class Register extends React.Component {
     e.preventDefault();
     await createUser(this.state.registerForm);
     this.handleLogin();
-    // this.setState({
-    //   registerForm: {
-    //     username: '',
-    //     email: '',
-    //     password: '',
-    //   }
-    // })
+    this.setState({
+      registerForm: {
+        username: '',
+        email: '',
+        password: '',
+      }
+    })
     // console.log(this.state.registerForm)
   }
   handleRedirect = async (e) => {
@@ -60,13 +61,13 @@ export default class Register extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="register-dialog">
         <div className="close-thik" onClick={this.handleClose} ></div>
         <form className="register-form">
           <div className="flex">
             <h1 className="form-title">Register</h1>
           </div>
-          <input className="modern-input-text" onChange={this.handleChange} type="text" name="username" value={this.state.registerForm.name} placeholder="Username" />
+          <input className="modern-input-text" onChange={this.handleChange} type="text" name="username" value={this.state.registerForm.username} placeholder="Username" />
           <input className="modern-input-text" onChange={this.handleChange} type="email" name="email" value={this.state.registerForm.email} placeholder="Email" />
           <input className="modern-input-text" onChange={this.handleChange} type="password" name="password" value={this.state.registerForm.password} placeholder="Password" />
           <div className="flex">
@@ -77,3 +78,5 @@ export default class Register extends React.Component {
     )
   }
 }
+
+export default withRouter(Register);

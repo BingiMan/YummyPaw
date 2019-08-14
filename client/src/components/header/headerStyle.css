@@ -1,0 +1,83 @@
+
+.login-dialog, .register-dialog{
+  top: 25%;
+  left: 38%;
+  border: 1px solid rgba(0,0,0,.1);
+  width: 400px;
+  height: auto;
+  padding: 28px 0;
+  position: fixed;
+  background: #fafafa;
+  border-radius: 5px;
+  z-index: 2;
+  display: flex;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.login-form, .register-form{
+  margin:auto;
+}
+.flex {
+  display: flex;
+}
+.modern-input-text{
+  display: block;
+  width: 300px;
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-top: 7px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+.form-btn{
+  margin: auto;
+  font-weight: 900;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.form-btn:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+  background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+  background-color:#c62d1f;
+  color:#eeeeee;
+}
+.form-btn:active {
+  position:relative;
+  top:1px;
+}
+.close-thik{
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 20px;
+}
+.close-thik:hover {
+color:red;
+cursor: pointer;
+transition: color 0.3s ease;
+
+}
+.close-thik:after {
+  content: '✖'; /* UTF-8 symbol */
+}
+
+.btn{
+  background-color: #fff;
+  text-decoration: none;
+  cursor:pointer;
+  font-size: 12px;
+  height: 30px;
+  width: 90px;
+  border-radius: 25px;
+  font-weight: 900;
+  outline:none;
+}
