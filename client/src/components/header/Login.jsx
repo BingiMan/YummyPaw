@@ -1,5 +1,7 @@
 import React from 'react'
-import {withRouter} from 'react-router'
+import { withRouter } from 'react-router'
+import decode from 'jwt-decode';
+import {loginUser, verifyUser} from '../../services/user'
 
 class Login extends React.Component {
   constructor() {
@@ -15,7 +17,7 @@ class Login extends React.Component {
   }
   handleRedirect = async (e) => {
     e.preventDefault();
-    // await this.props.handleSubmit(e)
+    await this.handleSubmit(e)
     this.props.history.push('/')
     // this.props.hideLogin();
   }
@@ -34,18 +36,29 @@ class Login extends React.Component {
     })) 
   }
 
-  // handleSubmit = async (e) => {
-  //   e.preventDefault()
-  //   const resp = await loginUser(this.state.loginForm.username, this.state.loginForm.password)
-  //   this.setState({
-  //     currentUser: resp.data.user.username,
-  //     user: resp.data.user.id,
-  //     loginForm: {
-  //       username: '',
-  //       password: '',
-  //     }
-  //   })
-  // }
+  handleSubmit = async (e) => {
+    e.preventDefault()
+    const resp = await loginUser(this.state.loginForm.username, this.state.loginForm.password)
+    this.setState({
+      currentUser: resp.data.user.username,
+      user: resp.data.user.id,
+      loginForm: {
+        username: '',
+        password: '',
+      }
+    })
+  }
+  
+  componentDidMount = async()=> {
+    const user = await verifyUser();
+    const checkUser = localStorage.getItem("jwt");
+    if (user) {
+      const user = decode(user);
+      this.setState({
+        currentUser: user
+      })
+    }
+  }
 
 
 

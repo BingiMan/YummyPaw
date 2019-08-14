@@ -1,5 +1,7 @@
 import React from 'react'
-import { createUser } from '../../services/user';
+import { createUser, loginUser } from '../../services/user';
+import decode from 'jwt-decode';
+
 
 export default class Register extends React.Component {
   constructor() {
@@ -22,10 +24,18 @@ export default class Register extends React.Component {
       }
     }))
   }
+  handleLogin = async () => {
+    const userData = await loginUser(this.state.authFormData);
+    this.setState({
+      currentUser: decode(userData.token)
+    })
+    localStorage.setItem("jwt", userData.token)
+  }
 
   handleSubmit = async (e) => {
     e.preventDefault();
     await createUser(this.state.registerForm);
+    this.handleLogin();
     // this.setState({
     //   registerForm: {
     //     username: '',
@@ -35,12 +45,12 @@ export default class Register extends React.Component {
     // })
     // console.log(this.state.registerForm)
   }
-  // handleRedirect = async (e) => {
-  //   e.preventDefault()
-  //   await this.handleSubmit(e);
-  //   // await this.props.showLogin(e);
-  //   this.props.history.push('/')
-  // }
+  handleRedirect = async (e) => {
+    e.preventDefault()
+    await this.handleSubmit(e);
+    // await this.props.showLogin(e);
+    // this.props.history.push('/')
+  }
 
   handleClose = (e) => {
     e.preventDefault();
