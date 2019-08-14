@@ -1,4 +1,7 @@
-
+/* ----------- MODAL ----------- */
+.login-form, .register-form{
+  margin:auto;
+}
 .login-dialog, .register-dialog{
   top: 25%;
   left: 38%;
@@ -12,23 +15,6 @@
   z-index: 2;
   display: flex;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-.login-form, .register-form{
-  margin:auto;
-}
-.flex {
-  display: flex;
-}
-.modern-input-text{
-  display: block;
-  width: 300px;
-  border-radius: 5px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  margin-top: 7px;
-  margin-bottom: 16px;
-  resize: vertical;
 }
 .form-btn{
   margin: auto;
@@ -51,6 +37,33 @@
   position:relative;
   top:1px;
 }
+.btn{
+  background-color: #fff;
+  text-decoration: none;
+  cursor:pointer;
+  font-size: 12px;
+  height: 30px;
+  width: 90px;
+  border-radius: 25px;
+  font-weight: 900;
+  outline:none;
+}
+
+.flex {
+  display: flex;
+}
+.modern-input-text{
+  display: block;
+  width: 300px;
+  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-top: 7px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
 .close-thik{
   color: #777;
   font: 14px/100% arial, sans-serif;
@@ -70,14 +83,61 @@ transition: color 0.3s ease;
   content: '✖'; /* UTF-8 symbol */
 }
 
-.btn{
-  background-color: #fff;
-  text-decoration: none;
-  cursor:pointer;
-  font-size: 12px;
-  height: 30px;
-  width: 90px;
-  border-radius: 25px;
-  font-weight: 900;
-  outline:none;
+/* ----------- END modal ----------- */
+
+
+
+
+
+
+
+.nav-wrapper-left{
+  margin: 15px;
 }
+.nav-wrapper-right {
+  margin: 10px 50px;
+}
+.btn1, .btn2, .btn3 {
+   background-color: #fff;
+   /*padding: 1em 1.5em;*/
+   text-decoration: none;
+   cursor:pointer;
+   font-size: 12px;
+   height: 30px;
+   width: 90px;
+   border-radius: 25px;
+   font-weight: 900;
+   border: none;
+   outline:none;
+}
+
+.btn1, .btn2 {
+  height: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.display-username{
+  font-weight: 700;
+  margin: 15px;
+  color: #ffffff;
+}
+#logout:hover {
+cursor: pointer;
+}
+
+.nav-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 10;
+width: 100%;
+height: 50px;
+background-color: #ededed;
+display: flex;
+
+}
+.nav-opts{
+margin-left: auto;
+display: flex;
+}
+

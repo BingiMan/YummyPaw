@@ -1,61 +1,26 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { createUser, loginUser } from '../../services/user';
-import decode from 'jwt-decode';
+
 
 
 class Register extends React.Component {
   constructor() {
     super()
-    this.state = {
-      registerForm: {
-        username: '',
-        email: '',
-        password: '',
-      }
-    }
+    
   }
 
-  handleChange = (e) => {
-    const { target: { name, value } } = e;
-    this.setState(prevState => ({
-      registerForm: {
-        ...prevState.registerForm,
-        [name]: value,
-      }
-    }))
-  }
-  handleLogin = async () => {
-    const userData = await loginUser(this.state.authFormData);
-    this.setState({
-      currentUser: decode(userData.token)
-    })
-    localStorage.setItem("jwt", userData.token)
-  }
-
-  handleSubmit = async (e) => {
-    e.preventDefault();
-    await createUser(this.state.registerForm);
-    this.handleLogin();
-    this.setState({
-      registerForm: {
-        username: '',
-        email: '',
-        password: '',
-      }
-    })
-    // console.log(this.state.registerForm)
-  }
+  
   handleRedirect = async (e) => {
     e.preventDefault()
-    await this.handleSubmit(e);
-    // await this.props.showLogin(e);
+    await this.props.handleRegisterSubmit(e);
+    await this.props.showLogin(e);
     // this.props.history.push('/')
   }
 
   handleClose = (e) => {
     e.preventDefault();
-    // this.props.hideRegister();
+    this.props.hideRegister();
   }
 
 
@@ -67,11 +32,11 @@ class Register extends React.Component {
           <div className="flex">
             <h1 className="form-title">Register</h1>
           </div>
-          <input className="modern-input-text" onChange={this.handleChange} type="text" name="username" value={this.state.registerForm.username} placeholder="Username" />
-          <input className="modern-input-text" onChange={this.handleChange} type="email" name="email" value={this.state.registerForm.email} placeholder="Email" />
-          <input className="modern-input-text" onChange={this.handleChange} type="password" name="password" value={this.state.registerForm.password} placeholder="Password" />
+          <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="text" name="username" value={this.props.registerForm.username} placeholder="Username" />
+          <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="email" name="email" value={this.props.registerForm.email} placeholder="Email" />
+          <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="password" name="password" value={this.props.registerForm.password} placeholder="Password" />
           <div className="flex">
-            <button className="btn form-btn" onClick={this.handleSubmit}>Register</button>
+            <button className="btn form-btn" onClick={this.handleRedirect}>Register</button>
           </div>
         </form>
       </div>
