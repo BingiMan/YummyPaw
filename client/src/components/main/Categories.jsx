@@ -5,6 +5,7 @@ export default class Categories extends React.Component {
     super()
 
   }
+  
 
 
   render() {
