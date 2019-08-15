@@ -1,5 +1,7 @@
 import React from 'react'
+import './mainStyle.css'
 import { fetchPet } from '../../services/pet';
+import ReactPlayer from 'react-player'
 
 
 export default class Categories extends React.Component {
@@ -11,26 +13,6 @@ export default class Categories extends React.Component {
 
     }
   }
-
-  // handlePets = async () => {
-  //   const _pets = await fetchPet();
-  //   this.setState({
-  //     pets: _pets
-  //   })
-  // }
-
-  // displayCat = async () => {
-  //   this.setState({
-  //     isCat: true,
-
-  //   })
-  // }
-  // displayDog = async () => {
-  //   this.setState({
-  //     isCat: false,
-  //   })
-  // }
-
 
   componentDidMount = async () => {
     const pets = await fetchPet();
@@ -48,15 +30,16 @@ export default class Categories extends React.Component {
  
     return (
       <div>
-        <h1>HELOOOOOOOOOOOOO</h1>
+      <h1>HELOOOOOOOOOOOOO</h1>
+      <h1>HELOOOOOOOOOOOOO</h1>
         <button onClick={this.props.displayCat}> Cats </button>
         <button onClick={this.props.displayDog}>Dogs</button>
         <div>
-        {this.props.pets_form.is_cat ?
+        {this.props.pets_form.is_cat === true || this.props.pets_form.is_cat === null ?
           this.state.cats.map(cat => (
             <div key={cat.id}>
               <p>CATSSS</p>
-              <p>{cat.video_url}</p>
+              <ReactPlayer className="Video" url={cat.video_url}/>
               <p>{cat.title}</p>
             </div>
           ))
@@ -64,7 +47,7 @@ export default class Categories extends React.Component {
           this.state.dogs.map(dog => (
             <div key={dog.id}>
               <h1>DOOOOGS</h1>
-              {dog.video_url}
+              <ReactPlayer url={dog.video_url}/>
               {dog.title}
             </div>
           ))

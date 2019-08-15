@@ -32,7 +32,7 @@ class App extends React.Component {
         user_id: '',
         title: '',
         video_url: '',
-        is_cat: false,
+        is_cat: null,
       },
       currentPet: {
         id: '',
@@ -216,7 +216,7 @@ class App extends React.Component {
           />
         </header>
         <main>
-          <Route exact path="/pets" render={(props) =>
+          
             <Categories
               handleFetchPets={this.handleFetchPets}
               displayCat={this.displayCat}
@@ -224,7 +224,7 @@ class App extends React.Component {
               pets={this.state.pets}
               pets_form={this.state.pets_form}
               handleDetail={this.handleDetail}
-            />} />
+            />
           <Route exact path="/pets/:id/comment" render={() =>
             <Comment />} />
           <Route exact path="/addPet" render={() => (
