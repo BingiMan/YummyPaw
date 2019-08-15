@@ -1,8 +1,10 @@
 class PetsController < ApplicationController
   before_action :authorize_request, except: %i[index show]
   def index
-    @pets = Pet.all
-    render json: @pets, include: :user, status: :ok
+    @cats = Pet.where(is_cat: true)
+    @dogs = Pet.where(is_cat: false)
+
+    render json: { cats: @cats, dogs: @dogs}, include: :user, status: :ok
   end
   def show
     @pet = Pet.find(params[:id])
@@ -10,6 +12,7 @@ class PetsController < ApplicationController
   end
   def create
     @pet = Pet.new(pet_params)
+    @pet.user = @current_user
     if @pet.save
       render json: @pet, status: :created
     else

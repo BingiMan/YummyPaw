@@ -1,12 +1,13 @@
 import React from 'react';
+import decode from 'jwt-decode';
+import { loginUser, verifyUser, createUser } from './services/user'
+import { createPet, fetchPet } from './services/pet';
 import { Route, Link, withRouter } from 'react-router-dom'
+import AddPetForm from './components/main/AddPetForm';
 import Navigation from './components/header/Navigation'
 import Categories from './components/main/Categories'
 import Comment from './components/main/Comment'
-import { loginUser, verifyUser, createUser } from './services/user'
-import decode from 'jwt-decode';
 import './App.css';
-import { createPet } from './services/pet';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,16 +29,16 @@ class App extends React.Component {
       // ----PETS-----
       pets: [],
       pets_form: {
-        user_id:'',
+        user_id: '',
         title: '',
         video_url: '',
-        is_cat: null,
+        is_cat: false,
       },
       currentPet: {
         id: '',
         title: '',
         video_url: '',
-        is_cat:'',
+        is_cat: '',
       }
       // ----E N D-----
     }
@@ -82,6 +83,7 @@ class App extends React.Component {
         currentUser: user.username
       })
     }
+    this.handleFetchPets();
   }
   handleLogout = (e) => {
     e.preventDefault();
@@ -91,7 +93,7 @@ class App extends React.Component {
     })
   }
 
-  //  ----------- REGISTER -------------
+  //  -------------------------------REGISTER ---------------------------------
 
   handleRegisterChange = (e) => {
     const { target: { name, value } } = e;
@@ -122,45 +124,83 @@ class App extends React.Component {
     })
   }
 
-  // ------------------------END LOGIN- REGISTER-------------------------
+  // ------------------------END LOGIN- REGISTER------------------------------
+
+
+  // ------------------------ADD PET -----------------------------------------
   handlePetChange = (e) => {
     const { target: { name, value } } = e;
     this.setState(prevState => ({
       pets_form: {
         ...prevState.pets_form,
-        [name] : value
+        [name]: value
       }
     }))
   }
 
   handlePetSubmit = async (ev) => {
     ev.preventDefault();
-    const pets = await createPet(this.state.pets_form)
+    const pet = await createPet(this.state.pets_form)
     this.setState(prevState => ({
-      pets_form: [...prevState.pets_form, pets],
+      pets: [...prevState.pets, pet],
       pets_form: {
         title: '',
         video_url: '',
         is_cat: null,
       },
     }));
+    console.log(pet)
     this.props.history.push(`/pets`)
   }
-  // ------------------------END ADDING A PET-------------------------
+  // ------------------------END ADDING A PET---------------------------------
+
+  // ------------------------ CURRENT PET DETAILS-----------------------------
 
   handleDetail = (id) => {
     this.setState(prevState => ({
       currentPet: {
         ...prevState.currentPet,
-        id:id,
+        id: id,
       }
     }))
   }
+
+  handleFetchPets = async () => {
+    const _pets = await fetchPet();
+    console.log(_pets)
+    this.setState({
+      pets: _pets
+    })
+    console.log(this.state.pets)
+  }
+  // ------------------------END CURRENT PET DETAILS-------------------------
+
+  displayCat = async () => {
+    this.setState(prevState => ({
+      pets_form: {
+        ...prevState.pets_form,
+        is_cat: true,
+      }
+    }))
+  }
+  displayDog = async () => {
+    this.setState(prevState => ({
+      pets_form: {
+        ...prevState.pets_form,
+      is_cat: false,
+    }
+    }))
+  }
+
+  // ------------------------END ADD A PET FORM -----------------------------
 
   render() {
     return (
       <div className="App">
         <header>
+
+
+          {/* <AddPetForm /> */}
           <Navigation
             handleRedirect={this.handleRedirect}
             currentUser={this.state.currentUser}
@@ -176,17 +216,24 @@ class App extends React.Component {
           />
         </header>
         <main>
-          <Route exact path="/pets/:id" render={() =>
+          <Route exact path="/pets" render={(props) =>
             <Categories
-              pets_form={this.state.pets}
-              handlePetSubmit={this.handlePetSubmit}
-              handlePetChange={this.handlePetChange}
+              handleFetchPets={this.handleFetchPets}
+              displayCat={this.displayCat}
+              displayDog={this.displayDog}
+              pets={this.state.pets}
+              pets_form={this.state.pets_form}
               handleDetail={this.handleDetail}
             />} />
           <Route exact path="/pets/:id/comment" render={() =>
-            <Comment
-            
-            />} />
+            <Comment />} />
+          <Route exact path="/addPet" render={() => (
+            <AddPetForm
+              pets_form={this.state.pets_form}
+              handlePetChange={this.handlePetChange}
+              handlePetSubmit={this.handlePetSubmit}
+            />
+          )} />
         </main>
         <footer>
 

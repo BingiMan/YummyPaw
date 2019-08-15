@@ -1,6 +1,8 @@
 import React from 'react'
 import Login from './Login'
 import Register from './Register'
+import { Link } from 'react-router-dom'
+
 
 export default class Navigation extends React.Component {
   constructor() {
@@ -44,6 +46,7 @@ export default class Navigation extends React.Component {
     const loggedIn = localStorage.getItem('authToken');
     return (
       <div>
+        <Link to="/pets"> Categories </Link>
         <div className="nav-wrapper">
           <div className="nav-opts">
             {!loggedIn &&
