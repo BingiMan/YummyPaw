@@ -28,6 +28,7 @@ class App extends React.Component {
       // ----PETS-----
       pets: [],
       pets_form: {
+        user_id:'',
         title: '',
         video_url: '',
         is_cat: null,

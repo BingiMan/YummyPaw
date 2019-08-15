@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-
+  before_action :authorize_request, except: :create
+  before_action :authorize_request, only: [:verify]
   def index
     @users = User.all
     render json: @users,  include: :pets, status: :ok
@@ -34,9 +35,22 @@ class UsersController < ApplicationController
     head 204
   end
 
+  def verify
+    @user = {
+      id: @current_user[:id],
+      username: @current_user[:username],
+      email: @current_user[:email],
+    }
+    render json: @user
+  end
+
+
   private
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
-    params.require(:pet).permit(:username, :email, :password_digest)
+    params.require(:user).permit(:username, :email, :password)
   end  
 end
