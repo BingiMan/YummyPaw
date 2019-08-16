@@ -2,7 +2,9 @@ import React from 'react';
 import decode from 'jwt-decode';
 import { loginUser, verifyUser, createUser } from './services/user'
 import { createPet, fetchPet } from './services/pet';
+import { createComment } from './services/comment'
 import { Route, Link, withRouter } from 'react-router-dom'
+import SeeMoreVideos from './components/main/SeeMoreVideos'
 import AddPetForm from './components/main/AddPetForm';
 import Navigation from './components/header/Navigation'
 import Categories from './components/main/Categories'
@@ -13,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      // ----LOGIN-----
+      // -----------LOGIN----
       loginForm: {
         username: '',
         password: '',
@@ -25,9 +27,9 @@ class App extends React.Component {
       },
       currentUser: null,
       loggedIn: null,
-      // ----E N D-----
-      // ----PETS-----
-      pets: [],
+      // ----------E N D-----
+      // -----------PETS-----
+      pets: null,
       pets_form: {
         user_id: '',
         title: '',
@@ -39,10 +41,21 @@ class App extends React.Component {
         title: '',
         video_url: '',
         is_cat: '',
+      },
+      // ---------E N D-----
+      // ---------COMMENTS--
+      comments: null,
+      comments_form: {
+        user_id: '',
+        pet_id: '',
+        post: '',
       }
-      // ----E N D-----
+      // ---------E N D-----
+
     }
   }
+
+  // ------------------------LOGIN - REGISTER AUTH  -----------------------------
   handleRedirect = async (e) => {
     // e.preventDefault();
     await this.handleLoginSubmit(e)
@@ -80,7 +93,8 @@ class App extends React.Component {
     if (resp) {
       const user = (resp);
       this.setState({
-        currentUser: user.username
+        currentUser: user.username,
+        // pet_id: pet.id
       })
     }
     this.handleFetchPets();
@@ -127,7 +141,7 @@ class App extends React.Component {
   // ------------------------END LOGIN- REGISTER------------------------------
 
 
-  // ------------------------ADD PET -----------------------------------------
+  // ------------------------  ADD PET ---------------------------------------
   handlePetChange = (e) => {
     const { target: { name, value } } = e;
     this.setState(prevState => ({
@@ -141,20 +155,26 @@ class App extends React.Component {
   handlePetSubmit = async (ev) => {
     ev.preventDefault();
     const pet = await createPet(this.state.pets_form)
-    this.setState(prevState => ({
-      pets: [...prevState.pets, pet],
-      pets_form: {
-        title: '',
-        video_url: '',
-        is_cat: null,
-      },
-    }));
+    this.setState(prevState => {
+      const whichPet = pet.is_cat ? "cats" : "dogs"
+      return {
+        pets: {
+          ...prevState.pets,
+          [whichPet]: [...prevState.pets[whichPet], pet]
+        },
+        pets_form: {
+          title: '',
+          video_url: '',
+          is_cat: null,
+        },
+      }
+    });
     console.log(pet)
     this.props.history.push(`/pets`)
   }
   // ------------------------END ADDING A PET---------------------------------
 
-  // ------------------------ CURRENT PET DETAILS-----------------------------
+  // ------------------------ PETS DETAILS -----------------------------------
 
   handleDetail = (id) => {
     this.setState(prevState => ({
@@ -173,7 +193,7 @@ class App extends React.Component {
     })
     console.log(this.state.pets)
   }
-  // ------------------------END CURRENT PET DETAILS-------------------------
+
 
   displayCat = async () => {
     this.setState(prevState => ({
@@ -187,20 +207,67 @@ class App extends React.Component {
     this.setState(prevState => ({
       pets_form: {
         ...prevState.pets_form,
-      is_cat: false,
-    }
+        is_cat: false,
+      }
     }))
   }
 
-  // ------------------------END ADD A PET FORM -----------------------------
+  // ------------------------ END PETS DETAILS --------------------------------
+
+  // ------------------------ COMMENTS HERE -----------------------------------
+
+  handleCommentChange = (ev) => {
+    const { target: { name, value } } = ev;
+    this.setState(prevState => ({
+      comments_form: {
+        ...prevState.comments_form,
+        [name]: value
+      }
+    }))
+  }
+
+  handleCreateComment = async (petId, data) => {
+    // ev.preventDefault();
+    const comment = await createComment(petId, data);
+    // this.setState(prevState => {
+    //   return {
+    //     comments: [...prevState.comments, comment],
+    //     comments_form: {
+    //       user_id: '',
+    //       pet_id: '',
+    //       post: '',
+    //     }
+    //   }
+    // });
+  }
+
+
+  // handleDeleteComment = async (id) => {
+  //   const resp = await deleteComment(id);
+  //   this.setState(prevState => ({
+  //     comments: prevState.comments.filter(dojo => comment.id !== id),
+  //   }));
+  // }
+
+
+  fetchComment = async (petId) => {
+    const comments = await this.fetchComments(this.props.comment.id, petId);
+    this.setState(prevState => ({
+      comments: {
+        ...prevState.comments,
+        [petId]: comments
+      }
+    }));
+  }
+
+
+  // ------------------------ END COMMENTS ------------------------------------
 
   render() {
     return (
       <div className="App">
         <header>
 
-
-          {/* <AddPetForm /> */}
           <Navigation
             handleRedirect={this.handleRedirect}
             currentUser={this.state.currentUser}
@@ -216,7 +283,8 @@ class App extends React.Component {
           />
         </header>
         <main>
-          
+
+          <Route exact path="/" render={() =>
             <Categories
               handleFetchPets={this.handleFetchPets}
               displayCat={this.displayCat}
@@ -224,14 +292,30 @@ class App extends React.Component {
               pets={this.state.pets}
               pets_form={this.state.pets_form}
               handleDetail={this.handleDetail}
-            />
+            />}
+          />
           <Route exact path="/pets/:id/comment" render={() =>
             <Comment />} />
-          <Route exact path="/addPet" render={() => (
+          <Route path="/addPet" render={() => (
             <AddPetForm
               pets_form={this.state.pets_form}
               handlePetChange={this.handlePetChange}
               handlePetSubmit={this.handlePetSubmit}
+            />
+          )} />
+          <Route exact path="/seeMore" render={(props) => (
+            <SeeMoreVideos
+              pets={this.state.pets}
+              pets_form={this.state.pets_form}
+              handlePetChange={this.handlePetChange}
+              handlePetSubmit={this.handlePetSubmit}
+              //COMMENTS
+              comments_form={this.state.comments_form}
+              comments={this.state.comments}
+              currentUser={this.state.currentUser}
+              handleCreateComment={this.handleCreateComment}
+              handleCommentChange={this.handleCommentChange}
+              // pet={this.state.pets.find(pet => pet.id === parseInt(props.match.params.id))}
             />
           )} />
         </main>

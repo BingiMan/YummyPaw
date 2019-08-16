@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  cursor: url('./assets/images/pointer.png'), auto;
+  
 }
 
 .App-logo {
@@ -30,4 +32,6 @@
   to {
     transform: rotate(360deg);
   }
+}
+body{
 }

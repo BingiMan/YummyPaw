@@ -1,6 +1,8 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
+import './mainStyle.css'
 
-export default class AddPetForm extends React.Component {
+class AddPetForm extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -16,8 +18,9 @@ export default class AddPetForm extends React.Component {
   
   handleClose = (e) => {
     e.preventDefault();
-    // this.props.hideRegister();
+    this.props.history.push('/')
   }
+  
   
 
   render() {
@@ -43,3 +46,4 @@ export default class AddPetForm extends React.Component {
     )
   }
 }
+export default withRouter(AddPetForm)

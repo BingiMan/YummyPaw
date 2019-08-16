@@ -5,7 +5,6 @@ import { withRouter } from 'react-router'
 class Login extends React.Component {
   constructor() {
     super()
-    
   }
   handleClose = (e) => {
     e.preventDefault();
