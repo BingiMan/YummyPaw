@@ -1,5 +1,5 @@
 class CommentController < ApplicationController
-
+  before_action :authorize_request, except: %i[index show]
   def index
     @pet = Pet.find(params[:pet_id])
     @comments = Comment.where(pet_id: @pet.id)
@@ -13,7 +13,7 @@ class CommentController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      render json: @comment, status: :created
+      render json: @comment, include: {pet: {include: :user}}, status: :created
     else
       render json: {errors: @comment.errors}, status: :unprocessable_entity
     end
@@ -21,7 +21,7 @@ class CommentController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      render json: @comment, status: :ok
+      render json: @comment, include: {pet: {include: :user}},status: :ok
     else
       render json: {errors: @comment.errors},status: :unprocessable_entity
     end

@@ -13,7 +13,7 @@ class AddPetForm extends React.Component {
   handleRedirect = async (e) => {
     e.preventDefault()
     await this.props.handlePetSubmit(e);
-    // this.props.history.push('/')
+    this.props.history.push('/')
   }
   
   handleClose = (e) => {

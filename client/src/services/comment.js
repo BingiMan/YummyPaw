@@ -5,7 +5,8 @@ export const fetchComments = async (petId) => {
   return resp.data
 }
 
-export const createComment = async (petId, data) => {
+export const createComment = async (petId,data) => {
+  // const petId = data.pet_id;
   const resp = await api.post(`/pets/${petId}/comments`, data)
   return resp.data
 }

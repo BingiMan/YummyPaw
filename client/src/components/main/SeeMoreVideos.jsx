@@ -29,9 +29,11 @@ class SeeMoreVideos extends React.Component {
                     comments_form={this.props.comments_form}
                     comments={this.props.comments}
                     currentUser={this.props.currentUser}
-                    handleCreateComment={this.props.handleCreateComment}
+                    // handleCreateComment={this.props.handleCreateComment}
                     handleCommentChange={this.props.handleCommentChange}
-                    pet={this.props.pet}
+                    // pet={this.props.pet}
+                    handleSubmitComment={this.props.handleSubmitComment}
+                    loadComments={this.props.loadComments}
 
                   />
                   <div>{this.props.comments}</div>
@@ -41,7 +43,18 @@ class SeeMoreVideos extends React.Component {
               this.props.pets.dogs.map(dog => (
                 <div key={dog.id}>
                   <ReactPlayer url={dog.video_url} />
-                  {dog.title}
+                  <h1>{dog.title}</h1>
+                  <Comment
+                    
+                    comments_form={this.props.comments_form}
+                    comments={this.props.comments}
+                    currentUser={this.props.currentUser}
+                    handleSubmitComment={this.props.handleSubmitComment}
+                    loadComments={this.props.loadComments}
+                  // handleCreateComment={this.props.handleCreateComment}
+                  handleCommentChange={this.props.handleCommentChange}
+                  // pet={this.props.pet}
+                  />
                 </div>
               ))
             }

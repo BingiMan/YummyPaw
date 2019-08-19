@@ -2,7 +2,7 @@ import React from 'react';
 import decode from 'jwt-decode';
 import { loginUser, verifyUser, createUser } from './services/user'
 import { createPet, fetchPet } from './services/pet';
-import { createComment } from './services/comment'
+import { createComment, fetchComments } from './services/comment'
 import { Route, Link, withRouter } from 'react-router-dom'
 import SeeMoreVideos from './components/main/SeeMoreVideos'
 import AddPetForm from './components/main/AddPetForm';
@@ -44,7 +44,7 @@ class App extends React.Component {
       },
       // ---------E N D-----
       // ---------COMMENTS--
-      comments: null,
+      comments: [],
       comments_form: {
         user_id: '',
         pet_id: '',
@@ -226,21 +226,25 @@ class App extends React.Component {
     }))
   }
 
-  handleCreateComment = async (petId, data) => {
-    // ev.preventDefault();
-    const comment = await createComment(petId, data);
-    // this.setState(prevState => {
-    //   return {
-    //     comments: [...prevState.comments, comment],
-    //     comments_form: {
-    //       user_id: '',
-    //       pet_id: '',
-    //       post: '',
-    //     }
-    //   }
-    // });
+  loadComments = async () => {
+    const pet_id = this.props.match.params.pet_id;
+    const id = this.props.match.params.id;
+    const comments = await fetchComments(pet_id);
+    this.setState({
+      comments: comments,
+    })
   }
 
+  handleSubmitComment = async (e) => {
+    e.preventDefault();
+    const userId = this.props.match.params.user_id;
+    const data = this.state.comments_form;
+    const comment = await createComment(userId, data);
+    this.setState(prevState => ({
+      comments: [...prevState.comments, comment],
+    }))
+    this.resetCommentForm();
+  }
 
   // handleDeleteComment = async (id) => {
   //   const resp = await deleteComment(id);
@@ -249,16 +253,33 @@ class App extends React.Component {
   //   }));
   // }
 
+  // handleCreateComment = async (petId, data) => {
+  // ev.preventDefault();
+  // const comment = await createComment(petId, data);
+  // this.setState(prevState => {
+  //   return {
+  //     comments: [...prevState.comments, comment],
+  //     comments_form: {
+  //       user_id: '',
+  //       pet_id: '',
+  //       post: '',
+  //     }
+  //   }
+  // });
 
-  fetchComment = async (petId) => {
-    const comments = await this.fetchComments(this.props.comment.id, petId);
-    this.setState(prevState => ({
-      comments: {
-        ...prevState.comments,
-        [petId]: comments
-      }
-    }));
-  }
+
+
+
+
+  // fetchComment = async (petId) => {
+  //   const comments = await this.fetchComments(this.props.comment.id, petId);
+  //   this.setState(prevState => ({
+  //     comments: {
+  //       ...prevState.comments,
+  //       [petId]: comments
+  //     }
+  //   }));
+  // }
 
 
   // ------------------------ END COMMENTS ------------------------------------
@@ -315,16 +336,17 @@ class App extends React.Component {
               currentUser={this.state.currentUser}
               handleCreateComment={this.handleCreateComment}
               handleCommentChange={this.handleCommentChange}
-              // pet={this.state.pets.find(pet => pet.id === parseInt(props.match.params.id))}
+              handleSubmitComment={this.handleSubmitComment}
+              loadComments={this.loadComments}
             />
           )} />
         </main>
         <footer>
-
         </footer>
       </div>
     );
   }
 }
+
 
 export default withRouter(App);
