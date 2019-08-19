@@ -4,6 +4,9 @@ import { withRouter } from 'react-router-dom'
 import ReactPlayer from 'react-player'
 
 class SeeMoreVideos extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
 
   handleHomeRedirect = async () => {
@@ -29,6 +32,7 @@ class SeeMoreVideos extends React.Component {
                     comments_form={this.props.comments_form}
                     comments={this.props.comments}
                     currentUser={this.props.currentUser}
+                    currentPet={cat.id}
                     // handleCreateComment={this.props.handleCreateComment}
                     handleCommentChange={this.props.handleCommentChange}
                     // pet={this.props.pet}
@@ -45,14 +49,15 @@ class SeeMoreVideos extends React.Component {
                   <ReactPlayer url={dog.video_url} />
                   <h1>{dog.title}</h1>
                   <Comment
-                    
+
                     comments_form={this.props.comments_form}
                     comments={this.props.comments}
-                    currentUser={this.props.currentUser}
+                    currentUser={this.props.currentUser.id}
+                    currentPet={dog.id}
                     handleSubmitComment={this.props.handleSubmitComment}
                     loadComments={this.props.loadComments}
-                  // handleCreateComment={this.props.handleCreateComment}
-                  handleCommentChange={this.props.handleCommentChange}
+                    // handleCreateComment={this.props.handleCreateComment}
+                    handleCommentChange={this.props.handleCommentChange}
                   // pet={this.props.pet}
                   />
                 </div>

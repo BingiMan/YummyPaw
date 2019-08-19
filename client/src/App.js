@@ -25,7 +25,10 @@ class App extends React.Component {
         email: '',
         password: '',
       },
-      currentUser: null,
+      currentUser: {
+        id: null,
+        username: ""
+      },
       loggedIn: null,
       // ----------E N D-----
       // -----------PETS-----
@@ -76,9 +79,12 @@ class App extends React.Component {
   handleLoginSubmit = async (e) => {
     // e.preventDefault()
     const resp = await loginUser({ username: this.state.loginForm.username, password: this.state.loginForm.password })
-    // console.log(resp);
+    console.log(resp);
     this.setState({
-      currentUser: resp.username,
+      currentUser: {
+        id: resp.id,
+        name: resp.username
+      },
       user: resp.username,
       loginForm: {
         username: '',
@@ -237,8 +243,14 @@ class App extends React.Component {
 
   handleSubmitComment = async (e) => {
     e.preventDefault();
-    const userId = this.props.match.params.user_id;
+    const userId = this.state.currentUser.id;
+    this.setState({
+      comments_form: {
+        user_id: userId
+      }
+    })
     const data = this.state.comments_form;
+    console.log(data)
     const comment = await createComment(userId, data);
     this.setState(prevState => ({
       comments: [...prevState.comments, comment],
