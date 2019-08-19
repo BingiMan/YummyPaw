@@ -1,6 +1,6 @@
 import axios from 'axios'
-
 export const api = axios.create({
+  // baseURL: 'https://fast-escarpment-24164.herokuapp.com/',
   baseURL: 'http://localhost:3000'
 });
 

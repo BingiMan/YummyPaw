@@ -15,6 +15,7 @@ class SeeMoreVideos extends React.Component {
 
 
   render() {
+    console.log(this.props.pets_form)
     return (
       <div>
         <h1>HELLLOOOO WORLDDDD</h1>
@@ -26,21 +27,8 @@ class SeeMoreVideos extends React.Component {
             {this.props.pets_form.is_cat === true || this.props.pets_form.is_cat === null ?
               this.props.pets.cats.map(cat => (
                 <div key={cat.id}>
-                  <ReactPlayer className="Video" url={cat.video_url} />
+                  <ReactPlayer url={cat.video_url} />
                   <p>{cat.title}</p>
-                  <Comment
-                    comments_form={this.props.comments_form}
-                    comments={this.props.comments}
-                    currentUser={this.props.currentUser}
-                    currentPet={cat.id}
-                    // handleCreateComment={this.props.handleCreateComment}
-                    handleCommentChange={this.props.handleCommentChange}
-                    // pet={this.props.pet}
-                    handleSubmitComment={this.props.handleSubmitComment}
-                    loadComments={this.props.loadComments}
-
-                  />
-                  <div>{this.props.comments}</div>
                 </div>
               ))
               :
@@ -48,25 +36,43 @@ class SeeMoreVideos extends React.Component {
                 <div key={dog.id}>
                   <ReactPlayer url={dog.video_url} />
                   <h1>{dog.title}</h1>
-                  <Comment
-
-                    comments_form={this.props.comments_form}
-                    comments={this.props.comments}
-                    currentUser={this.props.currentUser.id}
-                    currentPet={dog.id}
-                    handleSubmitComment={this.props.handleSubmitComment}
-                    loadComments={this.props.loadComments}
-                    // handleCreateComment={this.props.handleCreateComment}
-                    handleCommentChange={this.props.handleCommentChange}
-                  // pet={this.props.pet}
-                  />
                 </div>
               ))
             }
           </div>
         )}
-      </div>
+    </div>
     )
   }
 }
 export default withRouter(SeeMoreVideos)
+
+
+
+
+
+
+
+
+
+
+
+
+{/* <Comment
+                    comments_form={this.props.comments_form}
+                    comments={this.props.comments}
+                    currentUser={this.props.currentUser}
+                    currentPet={cat.id}
+                    commentPetAndUser={this.props.commentPetAndUser}
+                    handleCommentChange={this.props.handleCommentChange}
+                    handleSubmitComment={this.props.handleSubmitComment}
+                    loadComments={this.props.loadComments}
+                    handleDeleteComment={this.props.handleDeleteComment}
+                    handleUpdateComment={this.props.handleUpdateComment}
+
+                  />
+                  {cat.comments.map(com => (
+                    <div key={com.id}>
+                      <p>{com.post}</p>
+                    </div>
+                  ))} */}

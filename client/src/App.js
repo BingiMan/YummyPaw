@@ -2,7 +2,7 @@ import React from 'react';
 import decode from 'jwt-decode';
 import { loginUser, verifyUser, createUser } from './services/user'
 import { createPet, fetchPet } from './services/pet';
-import { createComment, fetchComments } from './services/comment'
+import { createComment, fetchComments, deleteComment, updateComment } from './services/comment'
 import { Route, Link, withRouter } from 'react-router-dom'
 import SeeMoreVideos from './components/main/SeeMoreVideos'
 import AddPetForm from './components/main/AddPetForm';
@@ -27,7 +27,7 @@ class App extends React.Component {
       },
       currentUser: {
         id: null,
-        username: ""
+        name: ""
       },
       loggedIn: null,
       // ----------E N D-----
@@ -47,12 +47,13 @@ class App extends React.Component {
       },
       // ---------E N D-----
       // ---------COMMENTS--
-      comments: [],
+      comments:[],
       comments_form: {
-        user_id: '',
         pet_id: '',
         post: '',
-      }
+      },
+      edit: null,
+      editId: null,
       // ---------E N D-----
 
     }
@@ -99,7 +100,10 @@ class App extends React.Component {
     if (resp) {
       const user = (resp);
       this.setState({
-        currentUser: user.username,
+        currentUser: {
+          id: resp.id,
+          name: resp.username
+        }
         // pet_id: pet.id
       })
     }
@@ -222,77 +226,7 @@ class App extends React.Component {
 
   // ------------------------ COMMENTS HERE -----------------------------------
 
-  handleCommentChange = (ev) => {
-    const { target: { name, value } } = ev;
-    this.setState(prevState => ({
-      comments_form: {
-        ...prevState.comments_form,
-        [name]: value
-      }
-    }))
-  }
-
-  loadComments = async () => {
-    const pet_id = this.props.match.params.pet_id;
-    const id = this.props.match.params.id;
-    const comments = await fetchComments(pet_id);
-    this.setState({
-      comments: comments,
-    })
-  }
-
-  handleSubmitComment = async (e) => {
-    e.preventDefault();
-    const userId = this.state.currentUser.id;
-    this.setState({
-      comments_form: {
-        user_id: userId
-      }
-    })
-    const data = this.state.comments_form;
-    console.log(data)
-    const comment = await createComment(userId, data);
-    this.setState(prevState => ({
-      comments: [...prevState.comments, comment],
-    }))
-    this.resetCommentForm();
-  }
-
-  // handleDeleteComment = async (id) => {
-  //   const resp = await deleteComment(id);
-  //   this.setState(prevState => ({
-  //     comments: prevState.comments.filter(dojo => comment.id !== id),
-  //   }));
-  // }
-
-  // handleCreateComment = async (petId, data) => {
-  // ev.preventDefault();
-  // const comment = await createComment(petId, data);
-  // this.setState(prevState => {
-  //   return {
-  //     comments: [...prevState.comments, comment],
-  //     comments_form: {
-  //       user_id: '',
-  //       pet_id: '',
-  //       post: '',
-  //     }
-  //   }
-  // });
-
-
-
-
-
-  // fetchComment = async (petId) => {
-  //   const comments = await this.fetchComments(this.props.comment.id, petId);
-  //   this.setState(prevState => ({
-  //     comments: {
-  //       ...prevState.comments,
-  //       [petId]: comments
-  //     }
-  //   }));
-  // }
-
+ 
 
   // ------------------------ END COMMENTS ------------------------------------
 
@@ -327,8 +261,6 @@ class App extends React.Component {
               handleDetail={this.handleDetail}
             />}
           />
-          <Route exact path="/pets/:id/comment" render={() =>
-            <Comment />} />
           <Route path="/addPet" render={() => (
             <AddPetForm
               pets_form={this.state.pets_form}
@@ -336,22 +268,26 @@ class App extends React.Component {
               handlePetSubmit={this.handlePetSubmit}
             />
           )} />
-          <Route exact path="/seeMore" render={(props) => (
+          <Route exact path="/seeMore" render={() => (
             <SeeMoreVideos
               pets={this.state.pets}
               pets_form={this.state.pets_form}
               handlePetChange={this.handlePetChange}
               handlePetSubmit={this.handlePetSubmit}
               //COMMENTS
-              comments_form={this.state.comments_form}
-              comments={this.state.comments}
-              currentUser={this.state.currentUser}
-              handleCreateComment={this.handleCreateComment}
-              handleCommentChange={this.handleCommentChange}
-              handleSubmitComment={this.handleSubmitComment}
-              loadComments={this.loadComments}
+              // comments_form={this.state.comments_form}
+              // comments={this.state.comments}
+              // currentUser={this.state.currentUser}
+              // handleCreateComment={this.handleCreateComment}
+              // handleCommentChange={this.handleCommentChange}
+              // handleSubmitComment={this.handleSubmitComment}
+              // handleDeleteComment={this.handleDeleteComment}
+              // handleUpdateComment={this.handleUpdateComment}
+              // commentPetAndUser={this.commentPetAndUser}
+              // loadComments={this.loadComments}
             />
           )} />
+
         </main>
         <footer>
         </footer>
@@ -362,3 +298,140 @@ class App extends React.Component {
 
 
 export default withRouter(App);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------
+
+
+
+
+// handleCommentChange = (ev) => {
+//   const { target: { name, value } } = ev;
+//   this.setState(prevState => ({
+//     comments_form: {
+//       ...prevState.comments_form,
+//       [name]: value
+//     }
+//   }))
+// }
+
+// loadComments = async () => {
+//   const pet_id = this.props.match.params.pet_id;
+//   const id = this.props.match.params.id;
+//   const comments = await fetchComments(pet_id);
+//   this.setState({
+//     comments: comments,
+//   })
+// }
+
+// commentPetAndUser = (pet_id) => {
+//   this.setState(prevState => ({
+//     comments_form: {
+//       ...prevState.comments_form,
+//       pet_id: pet_id
+//     }
+//   }))
+// }
+
+// handleSubmitComment = async (e) => {
+//   e.preventDefault();
+//   const petId = this.state.comments_form.pet_id;
+//   const data = this.state.comments_form;
+//   console.log(data)
+//   const comment = await createComment(petId, data);
+//   console.log(comment)
+//   this.setState(prevState => ({
+//     comments: [...prevState.comments, comment]
+//   }))
+//   // this.resetCommentForm();
+// }
+
+// handleDeleteComment = async (id) => {
+//   const userId = this.props.match.params.user_id;
+//   const petId = this.props.match.params.pet_id;
+//   const comment = await deleteComment(userId, petId, id);
+//   this.setState(prevState => ({
+//     comments: prevState.comments.filter(comment =>
+//       comment.id !== id)
+//   }))
+// }
+
+// handleUpdateComment = async (e) => {
+//   e.preventDefault();
+//   const petId = this.props.match.params.pet_id;
+//   const id = this.props.match.params.id
+//   const data = this.state.comments_form;
+//   const comment = await updateComment(petId, id, data);
+//   this.setState(prevState => ({
+//     comments: [...prevState.comments.filter(com => com.petId !== petId), comment],
+//   }))
+// }
+// editComment = (comment) => {
+//   this.setState({
+//     edit: false,
+//     editId: comment.id,
+//     comment_form: {
+//       post: comment.post,
+//       user_id: this.props.currentUser.id,
+//       pet_id: this.props.match.params.id,
+//     }
+//   })
+// }
+
+
+
+
+
+// ------------------------------
+
+
+// handleDeleteComment = async (id) => {
+//   const resp = await deleteComment(id);
+//   this.setState(prevState => ({
+//     comments: prevState.comments.filter(comment => comment.id !== id),
+//   }));
+// }
+
+// handleCreateComment = async (petId, data) => {
+// ev.preventDefault();
+// const comment = await createComment(petId, data);
+// this.setState(prevState => {
+//   return {
+//     comments: [...prevState.comments, comment],
+//     comments_form: {
+//       user_id: '',
+//       pet_id: '',
+//       post: '',
+//     }
+//   }
+// });
+
+
+
+
+
+// fetchComment = async (petId) => {
+//   const comments = await this.fetchComments(this.props.comment.id, petId);
+//   this.setState(prevState => ({
+//     comments: {
+//       ...prevState.comments,
+//       [petId]: comments
+//     }
+//   }));
+// }

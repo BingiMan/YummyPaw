@@ -55,7 +55,7 @@ export default class Navigation extends React.Component {
                 <button className="btn btn2" onClick={this.showRegister}> Register</button>
               </div>)}
             {loggedIn &&
-              <div className="display-username"> Paw's up, {this.props.currentUser.username}  </div>
+              <div className="display-username"> Paw's up, {this.props.currentUser.name}  </div>
             }
             {loggedIn &&
               <button className="btn3" id="logout" onClick={this.props.handleLogout}>Log Out</button>

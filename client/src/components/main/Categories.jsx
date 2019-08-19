@@ -47,20 +47,26 @@ class Categories extends React.Component {
         <button onClick={this.handleSeeMoreRedirect}>See more</button>
         {this.props.pets && (
           <div>
-            {this.props.pets_form.is_cat === true || this.props.pets_form.is_cat === null ?
-              this.props.pets.cats.slice(0, 5).map(cat => (
-                <div key={cat.id}>
-                  <ReactPlayer className="Video" url={cat.video_url} />
-                  <p>{cat.title}</p>
-                </div>
-              ))
-              :
-              this.props.pets.dogs.slice(0, 5).map(dog => (
-                <div key={dog.id}>
-                  <ReactPlayer url={dog.video_url} />
-                  {dog.title}
-                </div>
-              ))
+            {
+              (this.props.pets_form.is_cat === true || this.props.pets_form.is_cat === null)
+                ?
+                this.props.pets.cats.slice(0, 5).map(cat => {
+                  return (
+                    <div key={cat.id}>
+                      <ReactPlayer className="Video" url={cat.video_url} />
+                      <p>{cat.title}</p>
+                    </div>
+                  );
+                })
+                :
+                this.props.pets.dogs.slice(0, 5).map(dog => {
+                  return (
+                    <div key={dog.id}>
+                      <ReactPlayer url={dog.video_url} />
+                      {dog.title}
+                    </div>
+                  );
+            })
             }
           </div>
         )}

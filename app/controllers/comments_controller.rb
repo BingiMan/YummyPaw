@@ -1,4 +1,4 @@
-class CommentController < ApplicationController
+class CommentsController < ApplicationController
   before_action :authorize_request, except: %i[index show]
   def index
     @pet = Pet.find(params[:pet_id])
@@ -36,6 +36,6 @@ class CommentController < ApplicationController
   private
 
   def comment_params
-    params.require(:Comment).permit(:post, :pet_id)
+    params.require(:comment).permit(:post, :pet_id)
   end
 end

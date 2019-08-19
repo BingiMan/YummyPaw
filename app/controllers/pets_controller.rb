@@ -4,7 +4,7 @@ class PetsController < ApplicationController
     @cats = Pet.where(is_cat: true)
     @dogs = Pet.where(is_cat: false)
 
-    render json: { cats: @cats, dogs: @dogs}, include: :user, status: :ok
+    render json: { cats: @cats, dogs: @dogs}, include: :comments, status: :ok
   end
   def show
     @pet = Pet.find(params[:id])
