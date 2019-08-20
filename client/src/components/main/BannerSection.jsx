@@ -18,7 +18,7 @@ class BannerSection extends React.Component {
                     <p className="text3"> Some cats actually like water </p>
                     <p className="text4"> Your dog misses you when you’re gone </p>
                     <p className="text5"> A Group Of Cats Is Called a Clowder </p>
-                    <h1>YummyPaw</h1>
+                    <div className="banner-logo"></div>
              </div>
             </div>
         )

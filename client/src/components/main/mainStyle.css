@@ -3,6 +3,13 @@ banner-wrapper{
   height: 451px;
   position: absolute;
 }
+.banner-logo{
+  background: url("../../assets/images/yummy-logo.png");
+  height: 60px;
+  width: auto;
+  background-repeat: no-repeat;
+  margin: -3px 40%;
+}
 .banner{
   background: url("../../assets/images/doggie-banner.jpg");
   height: 27vw;
