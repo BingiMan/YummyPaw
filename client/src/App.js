@@ -33,7 +33,7 @@ class App extends React.Component {
             loggedIn: null,
             // ----------E N D-----
             // -----------PETS-----
-            pets: {},
+            pets: null,
             pets_form: {
                 user_id: '',
                 title: '',
@@ -99,7 +99,7 @@ class App extends React.Component {
 
     componentDidMount = async () => {
         const resp = await verifyUser();
-        // const checkUser = localStorage.getItem("jwt");
+        const checkUser = localStorage.getItem("jwt");
         if (resp) {
             const user = (resp);
             this.setState({
