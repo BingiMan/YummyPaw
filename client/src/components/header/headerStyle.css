@@ -1,6 +1,8 @@
-/* ----------- MODAL ----------- */
+/* ----------- LOGOS + ANIMATION ----------- */
 .logos{
   margin: 0 15px;
+  user-select: none;
+  outline: none;
 }
 .logos:hover{
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
@@ -41,6 +43,12 @@
   background-repeat: no-repeat;
   border: none;
 }
+/* ----------- LOGOS + ANIMATION END ------- */
+
+
+
+
+/* ----------- MODAL ----------- */
 .login-form, .register-form{
   margin:auto;
 }
@@ -141,7 +149,6 @@ transition: color 0.3s ease;
 }
 .btn1, .btn2, .btn3 {
    background-color: #fff;
-   /*padding: 1em 1.5em;*/
    text-decoration: none;
    cursor:pointer;
    font-size: 12px;
@@ -167,6 +174,7 @@ cursor: pointer;
 }
 
 .nav-wrapper {
+  border-bottom: 4px solid black;
 position: fixed;
 top: 0;
 left: 0;

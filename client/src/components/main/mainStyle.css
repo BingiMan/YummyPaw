@@ -24,6 +24,7 @@ banner-wrapper{
 }
 .banner{
   background: url("../../assets/images/doggie-banner.jpg");
+  border-bottom: 4px solid black;
   height: 27vw;
   background-repeat: no-repeat;
   width: 100%;
