@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30d111d0-3bd6-4360-a0fa-88d4d5db5622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/images/cat-meme4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/images/dog-cat4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/images/dog-cat5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/main/ImgSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/main/mainStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/main/mainStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-    </list>
+    <list default="true" id="30d111d0-3bd6-4360-a0fa-88d4d5db5622" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -70,10 +61,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/src/components/main/mainStyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="245" column="23" lean-forward="true" selection-start-line="245" selection-start-column="23" selection-end-line="245" selection-end-column="23" />
+            <state relative-caret-position="2352">
+              <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
               <folding>
-                <marker date="1566332315055" expanded="true" signature="1872:1935" ph="..." />
+                <marker date="1566332544998" expanded="true" signature="1872:1935" ph="..." />
               </folding>
             </state>
           </provider>
@@ -244,12 +235,12 @@
       <option name="presentableId" value="Default" />
       <updated>1566242005715</updated>
       <workItem from="1566242006856" duration="508000" />
-      <workItem from="1566260452960" duration="26246000" />
+      <workItem from="1566260452960" duration="26535000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26754000" />
+    <option name="totallyTimeSpent" value="27043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1680" height="934" extended-state="6" />
@@ -520,10 +511,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/main/mainStyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="245" column="23" lean-forward="true" selection-start-line="245" selection-start-column="23" selection-end-line="245" selection-end-column="23" />
+        <state relative-caret-position="2352">
+          <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
           <folding>
-            <marker date="1566332315055" expanded="true" signature="1872:1935" ph="..." />
+            <marker date="1566332544998" expanded="true" signature="1872:1935" ph="..." />
           </folding>
         </state>
       </provider>
