@@ -1,4 +1,70 @@
-.video{
-  height: 100px;
-  widows: 100px;
+banner-wrapper{
+  width: 100%;
+  height: 451px;
+  position: absolute;
 }
+.banner{
+  background: url("../../assets/images/doggie-banner.jpg");
+  height: 27vw;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-size: 100% 100%;
+  overflow: hidden;
+}
+.banner h1{
+  font-weight: 200;
+}
+/*.banner p {*/
+/*  color: black;*/
+/*  display:inline-block;*/
+/*  font-size: 40px;*/
+/*  font-weight: bold;*/
+/*  margin-bottom: 0;*/
+/*  padding: 5px 15px;*/
+/*  text-transform: uppercase;*/
+/*  transform: translateX(100%);*/
+/*  white-space: nowrap;*/
+/*}*/
+.text1{
+  display: inline-block;
+  margin-top: 96px;
+}
+.text2{
+
+}
+.text3{
+  margin: 20px;
+  padding: 20px;
+  font-size: 20px;
+}
+.text4{
+  padding: 10px;
+  margin: 30px;
+  font-size: 30px;
+}
+.text5{
+
+}
+/*.text1 {*/
+/*  animation: moveText linear 14s forwards infinite;*/
+/*}*/
+/*.text2 {*/
+/*  animation: moveText linear 14s 5s forwards infinite;*/
+/*}*/
+/*.text3 {*/
+/*  animation: moveText linear 14s 8s forwards infinite;*/
+/*}*/
+/*.text4 {*/
+/*  animation: moveText linear 14s 2s forwards infinite;*/
+/*}*/
+/*.text5 {*/
+/*  animation: moveText linear 14s 8s forwards infinite;*/
+/*}*/
+
+@keyframes moveText {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-150%); }
+}
+
+
+

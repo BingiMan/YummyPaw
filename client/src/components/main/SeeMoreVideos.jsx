@@ -22,47 +22,47 @@ class SeeMoreVideos extends React.Component {
         <h1>HELLLOOOO WORLDDDD</h1>
         <h1>HELLLOOOO WORLDDDD</h1>
         <button onClick={this.handleHomeRedirect}>Go back Home</button>
-        {this.props.pets ? (
-            <div>
-                {this.props.pets_form.is_cat === true || this.props.pets_form.is_cat === null ?
-                    this.props.pets.cats.map(cat => (
-                        <div key={cat.id}>
-                            <ReactPlayer url={cat.video_url} />
-                            <p>{cat.title}</p>
-                            <div>
-                                <div>
-                                    comments
-                                </div>
-                                <div>
-                                    <Comment
-                                        currentUser={this.props.currentUser}
-                                        // comments_form={this.props.comments_form}
-                                        // handleCommentChange={this.props.handleCommentChange}
-                                        // handleSubmitComment={this.props.handleSubmitComment}
-                                        // handleDeleteComment={this.props.handleDeleteComment}
-                                        // handleUpdateComment={this.props.handleUpdateComment}
-                                        // comments={this.props.comments}
-                                        // pets={this.props.pets}
-                                    />
-                                    {cat.comments.map(com => (
-                                        <div key={com.id}>
-                                            <p>{com.post}</p>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                    :
-                    this.props.pets.dogs.map(dog => (
-                        <div key={dog.id}>
-                            <ReactPlayer url={dog.video_url} />
-                            <h1>{dog.title}</h1>
-                        </div>
-                    ))
-                }
-            </div>
-        ) : ''}
+        {/*{this.props.pets ? (*/}
+        {/*    <div>*/}
+        {/*        {this.props.pets_form.is_cat === true || this.props.pets_form.is_cat === null ?*/}
+        {/*            this.props.pets.cats.map(cat => (*/}
+        {/*                <div key={cat.id}>*/}
+        {/*                    <ReactPlayer url={cat.video_url} />*/}
+        {/*                    <p>{cat.title}</p>*/}
+        {/*                    <div>*/}
+        {/*                        <div>*/}
+        {/*                            comments*/}
+        {/*                        </div>*/}
+        {/*                        <div>*/}
+        {/*                            <Comment*/}
+        {/*                                currentUser={this.props.currentUser}*/}
+        {/*                                // comments_form={this.props.comments_form}*/}
+        {/*                                // handleCommentChange={this.props.handleCommentChange}*/}
+        {/*                                // handleSubmitComment={this.props.handleSubmitComment}*/}
+        {/*                                // handleDeleteComment={this.props.handleDeleteComment}*/}
+        {/*                                // handleUpdateComment={this.props.handleUpdateComment}*/}
+        {/*                                // comments={this.props.comments}*/}
+        {/*                                // pets={this.props.pets}*/}
+        {/*                            />*/}
+        {/*                            {cat.comments.map(com => (*/}
+        {/*                                <div key={com.id}>*/}
+        {/*                                    <p>{com.post}</p>*/}
+        {/*                                </div>*/}
+        {/*                            ))}*/}
+        {/*                        </div>*/}
+        {/*                    </div>*/}
+        {/*                </div>*/}
+        {/*            ))*/}
+        {/*            :*/}
+        {/*            this.props.pets.dogs.map(dog => (*/}
+        {/*                <div key={dog.id}>*/}
+        {/*                    <ReactPlayer url={dog.video_url} />*/}
+        {/*                    <h1>{dog.title}</h1>*/}
+        {/*                </div>*/}
+        {/*            ))*/}
+        {/*        }*/}
+        {/*    </div>*/}
+        {/*) : ''}*/}
     </div>
     )
   }

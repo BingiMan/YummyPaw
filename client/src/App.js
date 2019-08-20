@@ -6,6 +6,7 @@ import {createComment, fetchComments, deleteComment, updateComment} from './serv
 import {Route, Link, withRouter} from 'react-router-dom'
 import SeeMoreVideos from './components/main/SeeMoreVideos'
 import AddPetForm from './components/main/AddPetForm';
+import BannerSection from './components/main/BannerSection'
 import Navigation from './components/header/Navigation'
 import Categories from './components/main/Categories'
 import Comment from './components/main/Comment'
@@ -259,6 +260,7 @@ class App extends React.Component {
                         handleRegisterChange={this.handleRegisterChange}
                         registerForm={this.state.registerForm}
                     />
+                    <BannerSection />
                 </header>
                 <main>
 
