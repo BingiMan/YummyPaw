@@ -8,6 +8,7 @@ import SeeMoreVideos from './components/main/SeeMoreVideos'
 import AddPetForm from './components/main/AddPetForm';
 import BannerSection from './components/main/BannerSection'
 import Navigation from './components/header/Navigation'
+import ImgSection from './components/main/ImgSection'
 import Categories from './components/main/Categories'
 import Comment from './components/main/Comment'
 import './App.css';
@@ -261,6 +262,7 @@ class App extends React.Component {
                         registerForm={this.state.registerForm}
                     />
                     <BannerSection />
+                    <ImgSection />
                 </header>
                 <main>
 
