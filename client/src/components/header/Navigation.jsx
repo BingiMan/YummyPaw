@@ -58,7 +58,7 @@ export default class Navigation extends React.Component {
               <div className="display-username"> Paw's up, {this.props.currentUser.name}  </div>
             }
             {loggedIn &&
-              <button className="btn3" id="logout" onClick={this.props.handleLogout}>Log Out</button>
+              <button className="logos logout-logo" id="logout" onClick={this.props.handleLogout}/>
             }
           </div>
         </div>

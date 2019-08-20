@@ -43,6 +43,15 @@
   background-repeat: no-repeat;
   border: none;
 }
+.logout-logo{
+  background: url("../../assets/images/logout-icon.png");
+  height: 50px;
+  background-size: 55px 50px;
+  width: 55px;
+  background-repeat: no-repeat;
+  border: none;
+  margin: 10px 30px;
+}
 /* ----------- LOGOS + ANIMATION END ------- */
 
 
@@ -166,8 +175,8 @@ transition: color 0.3s ease;
 }
 .display-username{
   font-weight: 700;
-  margin: 15px;
-  color: #ffffff;
+  margin: 25px 15px;;
+  color: black;
 }
 #logout:hover {
 cursor: pointer;
