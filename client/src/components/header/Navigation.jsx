@@ -51,8 +51,8 @@ export default class Navigation extends React.Component {
           <div className="nav-opts">
             {!loggedIn &&
               (<div className="nav-wrapper-right">
-                <button className="login-logo" onClick={this.showLogin}/>
-                <button className="btn btn2" onClick={this.showRegister}> Register</button>
+                <button className="logos login-logo" onClick={this.showLogin}/>
+                <button className="logos register-logo" onClick={this.showRegister}/>
               </div>)}
             {loggedIn &&
               <div className="display-username"> Paw's up, {this.props.currentUser.name}  </div>
