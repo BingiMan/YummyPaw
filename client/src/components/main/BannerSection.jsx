@@ -7,8 +7,6 @@ class BannerSection extends React.Component {
     }
 
 
-
-
     render(){
         return(
             <div className="banner-wrapper">
@@ -20,6 +18,10 @@ class BannerSection extends React.Component {
                     <p className="text5"> A Group Of Cats Is Called a Clowder </p>
                     <div className="banner-logo"></div>
              </div>
+                <div className="banner-description">
+                    Yummy Paw is the perfect home for cats and/or dogs lovers, here you can watch and share with the community trending clips, the most entertaining and funniest pet videos online. You will also be able to add comments on yor favorite videos to share some of your love.
+                    Let be filled with sweetness watching these beauties!
+                </div>
             </div>
         )
     }

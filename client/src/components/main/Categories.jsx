@@ -39,8 +39,6 @@ class Categories extends React.Component {
 
     return (
       <div>
-        <h1>HELOOOOOOOOOOOOO</h1>
-        <h1>HELOOOOOOOOOOOOO</h1>
         <button onClick={this.props.displayCat}> Cats </button>
         <button onClick={this.props.displayDog}>Dogs</button>
         <button onClick={this.handleAddRedirect}>Add Video</button>
