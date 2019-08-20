@@ -123,7 +123,8 @@ banner-wrapper{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 5px solid white;
+  border: 3px solid white;
+  box-shadow: 1px 1px 2px 2px black;
   border-radius: 10px;
 }
 
@@ -176,15 +177,19 @@ banner-wrapper{
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 5;
+  background-size: 410px 307px;
+  background-repeat: no-repeat;
 }
 .item2{
-  background: url("../../assets/images/dog-cat1.jpg");
+  background: url("../../assets/images/dog-cat3.jpg");
   /*background-size: 250px 200px;*/
   /*background-repeat: no-repeat;*/
   /*height: 200px;*/
   /*width: 250px;*/
   /*border: 6px solid white;*/
   /*display: inline-grid;*/
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   grid-column-start: 3;
   grid-column-end: 6;
   grid-row-start: 1;
@@ -198,6 +203,9 @@ banner-wrapper{
   /*width: 250px;*/
   /*border: 6px solid white;*/
   /*display: inline-block;*/
+  width: 98.5%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
   grid-column-start: 6;
   grid-column-end: 9;
   grid-row-start: 1;
@@ -211,6 +219,8 @@ banner-wrapper{
   /*width: 250px;*/
   /*border: 6px solid white;*/
   /*display: inline-block;*/
+  background-size: 100% 103%;
+  background-repeat: no-repeat;
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 5;
@@ -224,19 +234,25 @@ banner-wrapper{
   /*width: 250px;*/
   /*border: 6px solid white;*/
   /*display: inline-block;*/
+  background-size: 100% 101%;
+  background-repeat: no-repeat;
   grid-column-start: 4;
   grid-column-end: 6;
   grid-row-start: 5;
   grid-row-end: 9;
 }
 .item6{
-  background: url("../../assets/images/dog-cat3.jpg");
+
+  background: url("../../assets/images/dog-cat6.jpg");
   /*background-size: 250px 250px;*/
   /*background-repeat: no-repeat;*/
   /*height: 250px;*/
   /*width: 250px;*/
   /*border: 6px solid white;*/
   /*display: inline-block;*/
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 99%;
   grid-column-start: 6;
   grid-column-end: 9;
   grid-row-start: 6;

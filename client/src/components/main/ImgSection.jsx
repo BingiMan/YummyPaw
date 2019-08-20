@@ -15,9 +15,9 @@ class ImgSection extends  React.Component {
                 <div className="item4 gallery__img"></div>
                 <div className="item5 gallery__img"></div>
                 <div className="item6 gallery__img"></div>
-                <div className="item7 gallery__img"></div>
-                <div className="item8 gallery__img"></div>
-                <div className="item9 gallery__img"></div>
+                {/*<div className="item7 gallery__img"></div>*/}
+                {/*<div className="item8 gallery__img"></div>*/}
+                {/*<div className="item9 gallery__img"></div>*/}
             </div>
         )
     }
