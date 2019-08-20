@@ -1,4 +1,12 @@
 /* ----------- MODAL ----------- */
+.login-logo{
+  background: url("../../assets/images/login-icon.png");
+  height: 50px;
+  background-size: 55px 50px;
+  width: 55px;
+  background-repeat: no-repeat;
+  border: none;
+}
 .login-form, .register-form{
   margin:auto;
 }
@@ -131,7 +139,7 @@ left: 0;
 z-index: 10;
 width: 100%;
 height: 70px;
-background-color:black;
+background-color:white;
 display: flex;
 
 

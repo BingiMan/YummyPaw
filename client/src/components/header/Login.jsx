@@ -25,7 +25,7 @@ class Login extends React.Component {
             <input className="modern-input-text" onChange={this.props.handleLoginChange} type="text" name="username" value={this.props.loginForm.username} placeholder="Username" />
             <input className="modern-input-text" onChange={this.props.handleLoginChange} type="password" name="password" value={this.props.loginForm.password} placeholder="Password" />
             <div className="flex">
-            <button className="btn form-btn" onClick={this.handleClose}>Login</button>
+            <button className="btn form-btn " onClick={this.handleClose}>Login</button>
             </div>
           </form>
         </div>
