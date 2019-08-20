@@ -18,6 +18,9 @@ banner-wrapper{
   background-size: 100% 100%;
   overflow: hidden;
 }
+.banner p{
+  text-shadow: -1px 0px 15px rgba(255, 255, 255, 1);
+}
 .banner h1{
   font-weight: 200;
 }
@@ -34,43 +37,52 @@ banner-wrapper{
 /*}*/
 .text1{
   display: inline-block;
-  margin-top: 96px;
+  margin-top: 74px;
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 .text2{
-
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 .text3{
-  margin: 20px;
-  padding: 20px;
   font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 .text4{
   padding: 10px;
-  margin: 30px;
   font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 .text5{
-
+  font-size: 1.6em;
+  font-weight: 700;
+  text-transform: uppercase;
 }
-/*.text1 {*/
-/*  animation: moveText linear 14s forwards infinite;*/
-/*}*/
-/*.text2 {*/
-/*  animation: moveText linear 14s 5s forwards infinite;*/
-/*}*/
-/*.text3 {*/
-/*  animation: moveText linear 14s 8s forwards infinite;*/
-/*}*/
-/*.text4 {*/
-/*  animation: moveText linear 14s 2s forwards infinite;*/
-/*}*/
-/*.text5 {*/
-/*  animation: moveText linear 14s 8s forwards infinite;*/
-/*}*/
+
+.text1 {
+  animation: moveText linear 10s forwards infinite;
+}
+.text2 {
+  animation: moveText linear 10s forwards infinite;
+}
+.text3 {
+  animation: moveText linear 12s forwards infinite;
+}
+.text4 {
+  animation: moveText linear 11s forwards infinite;
+}
+.text5 {
+  animation: moveText linear 15s  forwards infinite;
+}
 
 @keyframes moveText {
-  from { transform: translateX(100%); }
-  to { transform: translateX(-150%); }
+  from { transform: translateX(105%); }
+  to { transform: translateX(-155%); }
 }
 
 
