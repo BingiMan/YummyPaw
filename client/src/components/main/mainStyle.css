@@ -103,21 +103,12 @@ banner-wrapper{
 
 
 .grid {
-  /*display: grid;*/
-  /*grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));*/
-  /*grid-gap: 20px;*/
-  /*align-items: stretch;*/
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 4vw);
   grid-gap: 13px;
   margin-top: 20px;
 }
-/*.grid > div {*/
-/*  border: 1px solid #ccc;*/
-/*  box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);*/
-/*  max-width: 100%;*/
-/*}*/
 
 .gallery__img {
   width: 100%;
@@ -128,51 +119,8 @@ banner-wrapper{
   border-radius: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-/*.item1 { grid-area: a; }*/
-/*.item2 { grid-area: b; }*/
-/*.item3 { grid-area: c; }*/
-/*.item4 { grid-area: d; }*/
-/*.item5 { grid-area: f; }*/
-/*.item6 { grid-area: g; }*/
-
-/*.grid {*/
-/*  !*height: 566px;*!*/
-/*  !*width: 100%;*!*/
-/*  display: grid;*/
-/*  grid-template-areas:*/
-/*          'a a b c c c'*/
-/*          'd d d e e e'*/
-/*          'd d d f f g';*/
-/*  grid-gap: 10px;*/
-/*  padding: 10px;*/
-/*  margin-top: 25px;*/
-/*}*/
-/*.grid > div {*/
-/*  background-color: rgba(255, 255, 255, 0.8);*/
-/*  padding: 20px 0;*/
-/*}*/
-
-
-
-
 .item1{
   background: url("../../assets/images/cat-meme1.jpg");
-  /*background-size: 290px 400px;*/
-  /*background-repeat: no-repeat;*/
-  /*display: inline-block;*/
-  /*height: 400px;*/
-  /*width: 290px;*/
-  /*border: 6px solid white;*/
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
@@ -182,12 +130,6 @@ banner-wrapper{
 }
 .item2{
   background: url("../../assets/images/dog-cat3.jpg");
-  /*background-size: 250px 200px;*/
-  /*background-repeat: no-repeat;*/
-  /*height: 200px;*/
-  /*width: 250px;*/
-  /*border: 6px solid white;*/
-  /*display: inline-grid;*/
   background-size: 100% 100%;
   background-repeat: no-repeat;
   grid-column-start: 3;
@@ -197,12 +139,6 @@ banner-wrapper{
 }
 .item3{
   background: url("../../assets/images/cat-meme2.jpg");
-  /*background-size: 250px 250px;*/
-  /*background-repeat: no-repeat;*/
-  /*height: 250px;*/
-  /*width: 250px;*/
-  /*border: 6px solid white;*/
-  /*display: inline-block;*/
   width: 98.5%;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -213,12 +149,6 @@ banner-wrapper{
 }
 .item4{
   background: url("../../assets/images/dog-cat2.jpg");
-  /*background-size: 250px 250px;*/
-  /*background-repeat: no-repeat;*/
-  /*height: 250px;*/
-  /*width: 250px;*/
-  /*border: 6px solid white;*/
-  /*display: inline-block;*/
   background-size: 100% 103%;
   background-repeat: no-repeat;
   grid-column-start: 1;
@@ -228,12 +158,6 @@ banner-wrapper{
 }
 .item5{
   background: url("../../assets/images/cat-meme3.jpg");
-  /*background-size: 250px 250px;*/
-  /*background-repeat: no-repeat;*/
-  /*height: 250px;*/
-  /*width: 250px;*/
-  /*border: 6px solid white;*/
-  /*display: inline-block;*/
   background-size: 100% 101%;
   background-repeat: no-repeat;
   grid-column-start: 4;
@@ -244,12 +168,6 @@ banner-wrapper{
 .item6{
 
   background: url("../../assets/images/dog-cat6.jpg");
-  /*background-size: 250px 250px;*/
-  /*background-repeat: no-repeat;*/
-  /*height: 250px;*/
-  /*width: 250px;*/
-  /*border: 6px solid white;*/
-  /*display: inline-block;*/
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 99%;
@@ -258,30 +176,5 @@ banner-wrapper{
   grid-row-start: 6;
   grid-row-end: 9;
 }
-/*.item7{*/
-/*  background: url("../../assets/images/dog-cat5.jpg");*/
-/*  !*background-size: 250px 250px;*!*/
-/*  !*background-repeat: no-repeat;*!*/
-/*  !*height: 250px;*!*/
-/*  !*width: 250px;*!*/
-/*  border: 6px solid white;*/
-/*  !*display: inline-block;*!*/
-/*}*/
-/*.item8{*/
-/*  background: url("../../assets/images/dog-cat4.jpg");*/
-/*  !*background-size: 250px 250px;*!*/
-/*  !*background-repeat: no-repeat;*!*/
-/*  !*height: 250px;*!*/
-/*  !*width: 250px;*!*/
-/*  border: 6px solid white;*/
-/*  !*display: inline-block;*!*/
-/*}*/
-/*.item9{*/
-/*  background: url("../../assets/images/cat-meme4.jpg");*/
-/*  !*background-size: 250px 250px;*!*/
-/*  !*background-repeat: no-repeat;*!*/
-/*  !*height: 250px;*!*/
-/*  !*width: 250px;*!*/
-/*  border: 6px solid white;*/
-/*  !*display: inline-block;*!*/
-/*}*/
+
+/*------------------------ GRID END ----------------------------------*/
