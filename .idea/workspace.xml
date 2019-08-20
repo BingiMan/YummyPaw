@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30d111d0-3bd6-4360-a0fa-88d4d5db5622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/Navigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/Navigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/header/headerStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/header/headerStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/assets/images/linkedin-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -268,12 +267,12 @@
       <option name="presentableId" value="Default" />
       <updated>1566242005715</updated>
       <workItem from="1566242006856" duration="508000" />
-      <workItem from="1566260452960" duration="15907000" />
+      <workItem from="1566260452960" duration="16090000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16415000" />
+    <option name="totallyTimeSpent" value="16598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="23" width="1680" height="934" extended-state="6" />

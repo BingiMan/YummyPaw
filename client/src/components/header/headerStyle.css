@@ -28,7 +28,7 @@
   }
 }
 .register-logo{
-  background: url("../../assets/images/register-icon.png");
+  background: url("../../assets/icon/register-icon.png");
   height: 50px;
   background-size: 55px 50px;
   width: 55px;
@@ -36,7 +36,7 @@
   border: none;
 }
 .login-logo{
-  background: url("../../assets/images/login-icon.png");
+  background: url("../../assets/icon/login-icon.png");
   height: 50px;
   background-size: 55px 50px;
   width: 55px;
@@ -44,7 +44,7 @@
   border: none;
 }
 .logout-logo{
-  background: url("../../assets/images/logout-icon.png");
+  background: url("../../assets/icon/logout-icon.png");
   height: 50px;
   background-size: 55px 50px;
   width: 55px;
