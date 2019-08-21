@@ -4,16 +4,27 @@ import './footerStyle.css'
 export default function Contact() {
   return (
     <div className="footer-container">
-      <div>
-          <ul>
-              <li>
-                  Email
-              </li>
-              <li>LinkedIn</li>
-              <li>Github</li>
-              <li>Standars</li>
-              <li>Coded/Desing by</li>
-          </ul>
+      <div className="footer-wrapper">
+          <div>
+              <p> Email </p>
+              <div className="email-icon icons"/>
+          </div>
+          <div>
+              <p>LinkedIn</p>
+              <div className="linkedin-icon icons"/>
+          </div>
+          <div>
+              <p>Github</p>
+              <div className="github-icon icons"/>
+          </div>
+          <div>
+              <p>Standars</p>
+              <div className="standars-icon icons"/>
+          </div>
+          <div>
+              <p>Coded by</p>
+              <div className="coded-icon icons"/>
+          </div>
       </div>
     </div>
   )

@@ -6,3 +6,51 @@
     height: 24vw;
     width: 100%;
 }
+.footer-wrapper{
+    display: flex;
+    text-align: center;
+    margin: 5% 24%;
+}
+.footer-wrapper > div{
+    margin: 40px;
+}
+.footer-wrapper > div > p{
+    font-weight: 900;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+.email-icon{
+    background: url("../../assets/icon/email-icon.png");
+    background-size: 80px 80px;
+    height: 90px;
+    width: 90px;
+    background-repeat: no-repeat;
+}
+.linkedin-icon{
+    background: url("../../assets/icon/linkedin-icon.png");
+    background-size: 80px 80px;
+    height: 90px;
+    width: 90px;
+    background-repeat: no-repeat;
+}
+.github-icon{
+    background: url("../../assets/icon/github-icon.png");
+    background-size: 80px 80px;
+    height: 90px;
+    width: 90px;
+    background-repeat: no-repeat;
+}
+.standars-icon{
+    background: url("../../assets/icon/standars-icon.png");
+    background-size: 80px 80px;
+    height: 90px;
+    width: 90px;
+    background-repeat: no-repeat;
+}
+.coded-icon{
+    background: url("../../assets/icon/codeed-by-icon.png");
+    background-size: 80px 80px;
+    height: 90px;
+    width: 90px;
+    background-repeat: no-repeat;
+}
