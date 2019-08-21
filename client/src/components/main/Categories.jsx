@@ -60,6 +60,7 @@ class Categories extends React.Component {
     displayCats = () => {
         return this.props.pets.cats.slice(0, 5).map(cat => {
             return (
+
                 <div key={cat.id}>
                     <ReactPlayer className="Video" url={cat.video_url}/>
                     <p>{cat.title}</p>
@@ -84,10 +85,9 @@ class Categories extends React.Component {
         const videosView = Object.keys(this.props.pets).length > 0 ? this.displayVideos() : null;
         // console.log(videosView);
         return (
-            <div>
-                <h1>HELOOOOOOOOOOOOO</h1>
-                <button onClick={this.props.displayCat}> Cats</button>
-                <button onClick={this.props.displayDog}>Dogs</button>
+            <div className="categories-section">
+                <button className="cat-section" onClick={this.props.displayCat}> Cats</button>
+                <button className="dog-section" onClick={this.props.displayDog}>Dogs</button>
                 <button onClick={this.handleAddRedirect}>Add Video</button>
                 <button onClick={this.handleSeeMoreRedirect}>See more</button>
                 {videosView}
