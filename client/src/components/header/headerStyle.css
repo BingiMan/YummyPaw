@@ -175,7 +175,7 @@ transition: color 0.3s ease;
 }
 .display-username{
   font-weight: 700;
-  margin: 25px 15px;;
+  margin: 25px 15px;
   color: black;
 }
 #logout:hover {
