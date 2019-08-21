@@ -54,11 +54,54 @@
     width: 90px;
     background-repeat: no-repeat;
 }
+.github-icon:hover{
+    transition: 0.9s;
+    transform: rotateY(360deg);
+}
 .linkedin-icon:hover{
     animation: shake 1s infinite linear;
 }
 .email-icon:hover{
     animation: lightning 1s infinite linear;
+}
+.standars-icon:hover{
+    animation: beat 1s infinite linear;
+}
+.coded-icon:hover{
+    animation: wiggle 1s infinite linear;
+}
+@keyframes wiggle {
+    0% { transform:rotate(1deg); }
+    29% { transform:rotate(1deg); }
+    30% { transform:rotate(2deg); }
+    31% { transform:rotate(3deg); }
+    33% { transform:rotate(2deg); }
+    35% { transform:rotate(1deg); }
+    37% { transform:rotate(-2deg); }
+    39% { transform:rotate(-3deg); }
+    41% { transform:rotate(-2deg); }
+    43% { transform:rotate(2deg); }
+    45% { transform:rotate(3deg); }
+    47% { transform:rotate(3deg); }
+    49% { transform:rotate(2deg); }
+    51% { transform:rotate(1deg); }
+    53% { transform:rotate(-2deg); }
+    55% { transform:rotate(-3deg); }
+    57% { transform:rotate(-2deg); }
+    59% { transform:rotate(1deg); }
+    100%{ transform:rotate(1deg); }
+
+}
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 @keyframes lightning {
     0% {
