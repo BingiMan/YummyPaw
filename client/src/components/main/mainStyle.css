@@ -181,7 +181,7 @@ banner-wrapper{
 .categories-section{
   margin-top: 80px;
 }
-.cat-section, .dog-section{
+.cat-section, .dog-section, .back-home, .addPet-section, .see-more-section{
   background: url("../../assets/images/categories-btn.png");
   background-size: 100% 100%;
   margin: -8px 160px 5px 267px;
@@ -201,4 +201,52 @@ banner-wrapper{
           -1px 1px 0 #000,
           1px 1px 0 #000;
 
+}
+.cat-section:hover, .dog-section:hover, .back-home:hover, .addPet-section:hover, .see-more-section:hover{
+  animation: beat 1s infinite linear;
+}
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.back-home{
+  width: 300px;
+  height: 200px;
+  margin: -14px 17px;
+}
+.addPet-section{
+  width: 300px;
+  height: 200px;
+  padding: 20px 0px;
+  margin-right: 230px;
+}
+.see-more-section{
+  width: 300px;
+  height: 200px;
+  padding: 20px 0px;
+  margin-left: 422px;
+}
+/*-----------------------------------------------------*/
+
+.comment-section, .video-title{
+  color: white;
+  -webkit-text-stroke: 1px black;
+  font-weight: 900;
+  text-shadow:
+          3px 3px 0 #000,
+          -1px -1px 0 #000,
+          1px -1px 0 #000,
+          -1px 1px 0 #000,
+          1px 1px 0 #000;
+}
+
+.video-title{
+  padding-right: 66%;
 }

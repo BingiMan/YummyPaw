@@ -358,6 +358,25 @@ display: flex;
 
 /*---------------------- HAMBURRGUER MENU --------------------------*/
 
+
+.close-btn {
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+}
+
+.close-btn:hover {
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+}
+
+.close-btn:after {
+  content: '✖'; /* UTF-8 symbol */
+}
+
 .edit-btn {
   background-image: url("../../assets/images/edit-button.png");
   width: 12px;
@@ -367,5 +386,34 @@ display: flex;
   cursor: pointer;
   display: inline-flex;
   background-repeat: no-repeat;
+}
+
+.comment-container {
+  max-width: 300px;
+}
+
+.comment-wrapper {
+  display: inline-flex;
+  width: 100%;
+}
+
+.comment-text {
+
+}
+
+.center-flex {
+  margin: auto;
+}
+
+.to-right {
+  margin-right: 0;
+}
+
+.to-left {
+  margin-left: 0;
+}
+
+.hide {
+  display: none;
 }
 

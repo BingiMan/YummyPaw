@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 import ReactPlayer from 'react-player'
 import {deleteComment, updateComment} from "../../services/comment";
 import EditComment from "./EditComment";
+import './mainStyle.css'
 
 class SeeMoreVideos extends React.Component {
     constructor(props) {
@@ -27,8 +28,8 @@ class SeeMoreVideos extends React.Component {
     displayCats = () => {
         return this.props.pets.cats.map(cat => (
             <div key={cat.id}>
+                <h1 className="video-title">{cat.title}</h1>
                 <ReactPlayer url={cat.video_url}/>
-                <p>{cat.title}</p>
                 {this.displayCommentForm(cat)}
             </div>
         ));
@@ -37,8 +38,8 @@ class SeeMoreVideos extends React.Component {
     displayDogs = () => {
         return this.props.pets.dogs.map(dog => (
             <div key={dog.id}>
+                <h1 className="video-title">{dog.title}</h1>
                 <ReactPlayer url={dog.video_url}/>
-                <h1>{dog.title}</h1>
                 {this.displayCommentForm(dog)}
             </div>
         ));
@@ -82,8 +83,8 @@ class SeeMoreVideos extends React.Component {
 
         return (
             <div>
-                <h1>COMMENT SECTION</h1>
-                <button onClick={this.handleHomeRedirect}>Go back Home</button>
+                <h1 className="comment-section">ALL VIDEOS AND COMMENT SECTION</h1>
+                <button className="back-home" onClick={this.handleHomeRedirect}>Go back Home</button>
                 {videosView}
             </div>
         )

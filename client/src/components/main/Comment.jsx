@@ -35,7 +35,8 @@ export default class Comment extends React.Component {
   render() {
     console.log(this.props);
     return (
-        <div>
+
+        <div className="comment-edit">
           <h3>Post Comment {this.props.currentUser.name} </h3>
           <input key={this.props.currentPet.id} name="post" value={this.state.post} type="text"
                  onChange={this.handleChange.bind(this)}/>
