@@ -358,4 +358,14 @@ display: flex;
 
 /*---------------------- HAMBURRGUER MENU --------------------------*/
 
+.edit-btn {
+  background-image: url("../../assets/images/edit-button.png");
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  padding-right: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  background-repeat: no-repeat;
+}
 

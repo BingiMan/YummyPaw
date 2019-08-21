@@ -7,10 +7,10 @@ import { withRouter } from 'react-router-dom'
 class Register extends React.Component {
   constructor() {
     super()
-    
+
   }
 
-  
+
   handleRedirect = async (e) => {
     e.preventDefault()
     await this.props.handleRegisterSubmit(e);
@@ -26,20 +26,20 @@ class Register extends React.Component {
 
   render() {
     return (
-      <div className="register-dialog">
-        <div className="close-thik" onClick={this.handleClose} ></div>
-        <form className="register-form">
-          <div className="flex">
-            <h1 className="form-title">Register</h1>
-          </div>
-          <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="text" name="username" value={this.props.registerForm.username} placeholder="Username" />
-          <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="email" name="email" value={this.props.registerForm.email} placeholder="Email" />
-          <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="password" name="password" value={this.props.registerForm.password} placeholder="Password" />
-          <div className="flex">
-            <button className="btn form-btn" onClick={this.handleRedirect}>Register</button>
-          </div>
-        </form>
-      </div>
+        <div className="register-dialog">
+          <div className="close-thik" onClick={this.handleClose} ></div>
+          <form className="register-form">
+            <div className="flex">
+              <h1 className="form-title">Register</h1>
+            </div>
+            <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="text" name="username" value={this.props.registerForm.username} placeholder="Username" />
+            <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="email" name="email" value={this.props.registerForm.email} placeholder="Email" />
+            <input className="modern-input-text" onChange={this.props.handleRegisterChange} type="password" name="password" value={this.props.registerForm.password} placeholder="Password" />
+            <div className="flex">
+              <button className="btn form-btn" onClick={this.handleRedirect}>Register</button>
+            </div>
+          </form>
+        </div>
     )
   }
 }
