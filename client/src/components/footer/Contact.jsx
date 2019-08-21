@@ -8,6 +8,7 @@ export default function Contact() {
           <div>
               <p> Email </p>
               <div className="email-icon icons"/>
+              {/*<div className="headline"> luis.carbonel.gk@hotmail.com </div>*/}
           </div>
           <div>
               <p>LinkedIn</p>
