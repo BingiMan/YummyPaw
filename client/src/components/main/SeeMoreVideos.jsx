@@ -39,7 +39,7 @@ class SeeMoreVideos extends React.Component {
         return this.props.pets.dogs.map(dog => (
             <div key={dog.id}>
                 <h1 className="video-title">{dog.title}</h1>
-                <ReactPlayer url={dog.video_url}/>
+                <ReactPlayer  url={dog.video_url}/>
                 {this.displayCommentForm(dog)}
             </div>
         ));
@@ -64,12 +64,14 @@ class SeeMoreVideos extends React.Component {
 
         return currentPet.comments.map(com => {
             return (
+                <div className="comment-background">
                 <div className="comment-container">
                     <EditComment
                         post={com.post}
                         postId={com.id}
                         currentPet={currentPet}
                     />
+                </div>
                 </div>
             );
         });

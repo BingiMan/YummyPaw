@@ -62,7 +62,9 @@ class Categories extends React.Component {
             return (
 
                 <div key={cat.id}>
+                    <div className="video">
                     <ReactPlayer url={cat.video_url}/>
+                    </div>
                     {/*<p>{cat.title}</p>*/}
                 </div>
             );
@@ -72,8 +74,10 @@ class Categories extends React.Component {
     displayDogs = () => {
         return this.props.pets.dogs.slice(0, 6).map(dog => {
             return (
+                <div className="video">
                 <div key={dog.id}>
-                    <ReactPlayer className="video" url={dog.video_url}/>
+                    <ReactPlayer url={dog.video_url}/>
+                </div>
                     {/*{dog.title}*/}
                 </div>
             );

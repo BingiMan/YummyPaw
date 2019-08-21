@@ -37,11 +37,11 @@ export default class Comment extends React.Component {
     return (
 
         <div className="comment-edit">
-          <h3>Post Comment {this.props.currentUser.name} </h3>
-          <input key={this.props.currentPet.id} name="post" value={this.state.post} type="text"
+          <h3 className="user-post">Post Comment {this.props.currentUser.name} </h3>
+          <input className="comment-input" key={this.props.currentPet.id} name="post" value={this.state.post} type="text"
                  onChange={this.handleChange.bind(this)}/>
           <input name="pet_id" value={this.props.currentPet.id} type="hidden"/>
-          <button onClick={this.handleSubmitComment.bind(this, this.props.currentPet.id)}> Post Comment</button>
+          <button className="comment-submit-btn" onClick={this.handleSubmitComment.bind(this, this.props.currentPet.id)}> Post Comment</button>
         </div>
     )
   }
