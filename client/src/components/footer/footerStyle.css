@@ -1,0 +1,8 @@
+.footer-container{
+    background: url("../../assets/images/animated-rock.png");
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    border-top: 5px solid black;
+    height: 24vw;
+    width: 100%;
+}

@@ -10,6 +10,7 @@ import BannerSection from './components/main/BannerSection'
 import Navigation from './components/header/Navigation'
 import ImgSection from './components/main/ImgSection'
 import Categories from './components/main/Categories'
+import Contact from  './components/footer/Contact'
 import Comment from './components/main/Comment'
 import './App.css';
 
@@ -305,6 +306,7 @@ class App extends React.Component {
 
                 </main>
                 <footer>
+                    <Contact/>
                 </footer>
             </div>
         );
