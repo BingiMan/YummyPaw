@@ -112,7 +112,7 @@ class App extends React.Component {
                 // pet_id: pet.id
             })
         }
-        // this.handleFetchPets();
+        this.handleFetchPets();
     }
     handleLogout = (e) => {
         e.preventDefault();

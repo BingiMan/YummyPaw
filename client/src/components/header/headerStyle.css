@@ -145,11 +145,6 @@ transition: color 0.3s ease;
 /* ----------- END modal ----------- */
 
 
-
-
-
-
-
 .nav-wrapper-left{
   margin: 15px;
 }
@@ -199,4 +194,168 @@ display: flex;
 margin-left: auto;
 display: flex;
 }
+
+
+/*---------------------- HAMBURRGUER MENU --------------------------*/
+#menuToggle
+{
+  display: block;
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 13;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 13; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 34px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background:black;
+  border-radius: 3px;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+  opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+  z-index: 13;
+}
+
+/*
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: black;
+  z-index: 13;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Oh yeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+  background: url("../../assets/images/nav-background.jpg");
+  background-size: 100% 100%;
+  position: absolute;
+  color: black;
+  width: 1050px;
+  margin: 31px 0 0 -80px;
+  /* border-radius: 10px 10px 10px 10px; */
+  /* padding: 50px; */
+  height: 380px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  color: white;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+  /* border: 3px solid black; */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+
+
+#menu li
+{
+  /*padding: 10px 44px;*/
+  font-size: 22px;
+  color:black;
+  margin: 33px 26px 0 45px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+.li-home{
+  background: white;
+  border-radius: 19px;
+  border: 3px solid black;
+  height: 80px;
+  width: 477px;
+}
+.li-categories{
+  background: white;
+  border-radius: 19px;
+  border: 3px solid black;
+  height: 80px;
+  width: 477px;
+  float: right;
+}
+.li-addPet{
+  background: white;
+  border-radius: 19px;
+  border: 3px solid black;
+  height: 80px;
+  width: 477px;
+}
+.li-contact{
+  background: white;
+  border-radius: 19px;
+  border: 3px solid black;
+  float: right;
+  height: 80px;
+  width: 477px;
+}
+
+/*---------------------- HAMBURRGUER MENU --------------------------*/
+
 
